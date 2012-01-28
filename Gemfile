@@ -24,6 +24,10 @@ gem 'jquery-rails'
 gem 'mongo_mapper'
 gem 'bson_ext'
 
+#Gems used for scheduled hacker news searches
+gem 'rufus-scheduler'
+gem 'hacker_news_search'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
