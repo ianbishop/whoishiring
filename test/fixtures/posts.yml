@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  company: MyString
+  author: MyString
+  content: MyString
+  location: MyString
+  intern: false
+  remote: false
+  full_time: false
+  latitude: 1.5
+  longitude: 1.5
+  gmaps: false
+
+two:
+  company: MyString
+  author: MyString
+  content: MyString
+  location: MyString
+  intern: false
+  remote: false
+  full_time: false
+  latitude: 1.5
+  longitude: 1.5
+  gmaps: false
