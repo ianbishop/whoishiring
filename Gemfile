@@ -25,9 +25,11 @@ gem 'mongo_mapper'
 gem 'bson_ext'
 
 gem 'gmaps4rails'
-
 gem 'kaminari'
-
+#Gems used for scheduled hacker news searches
+gem 'rufus-scheduler'
+gem 'hacker_news_search'
+gem 'stemmer'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
