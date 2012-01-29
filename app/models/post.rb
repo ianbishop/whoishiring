@@ -9,6 +9,7 @@ class Post
   key :position, String
   key :intern, Boolean
   key :remote, Boolean
+  key :honeb, Boolean
   key :full_time, Boolean
   key :latitude, Float
   key :longitude, Float
@@ -16,6 +17,7 @@ class Post
   key :gmaps, Boolean
   key :emails, Array
   key :urls, Array
+  timestamps!
 
   acts_as_gmappable :lat => 'latitude', :lon => 'longitude', :process_geocoding => true,
                     :check_process => :prevent_geocoding,

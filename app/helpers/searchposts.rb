@@ -29,12 +29,17 @@ class UpdatePosts
       item = result[:item]
      
       #feed it to the classifier
-      document = item[:text].downcase
-      document = document.gsub(/<.*>.*<\/.*>/, '').gsub(/<.*>/,'').gsub(/[\.\'\"\;\!\:\(\)\-\{\}]/,'')
+      content = item[:text].gsub(/<.*>.*<\/.*>/, '').gsub(/<.*>/,'').gsub(/[\.\'\"\;\!\:\(\)\-\{\}]/,'')
+      document = content.downcase
+
       if @classifier.classify(document) == 'hiring'
         post = Post.new
-        post.content = item[:text]
+        post.content = content
         post.author = item[:username]
+        post.intern = (document.include? "intern")
+        post.remote = (document.include? "remote")
+        post.honeb = (document.include? "h1b")
+        post.full_time = !(document.include? "part time" or document.include? "part-time")
         post.save!
       end
     end
