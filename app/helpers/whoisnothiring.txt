@@ -1,0 +1,95 @@
+Any more hiring in Seattle?
+I applied to one company based on the posts below and they were very prompt in getting back and was eventually offered an internship there, so yeah, they do take this pretty seriously.
+Summary of startup related job boards from around the world, most of them are broadly recruiter free:<p>======================<p>US:<p>Crunchboard <a href="http://www.crunchboard.com/jobs/" rel="nofollow">http://www.crunchboard.com/jobs/</a><p>Startuply <a href="http://www.startuply.com/" rel="nofollow">http://www.startuply.com/</a><p>YC Company Jobs: <a href="http://news.ycombinator.com/jobs" rel="nofollow">http://news.ycombinator.com/jobs</a><p>======================<p>UK:<p>CoderStack (Developer Jobs - run by me) <a href="http://www.coderstack.co.uk/startup-jobs" rel="nofollow">http://www.coderstack.co.uk/startup-jobs</a><p>Mind The Product (Product Management Jobs) <a href="http://mindtheproduct.com/jobs/" rel="nofollow">http://mindtheproduct.com/jobs/</a><p>Work in Startups <a href="http://www.workinstartups.com/" rel="nofollow">http://www.workinstartups.com/</a><p>Enternships - (Startup Internships) <a href="http://www.enternships.com/en/enternships" rel="nofollow">http://www.enternships.com/en/enternships</a><p>======================<p>Germany:<p>Berlin Startup Jobs <a href="http://berlinstartupjobs.com/" rel="nofollow">http://berlinstartupjobs.com/</a><p>======================<p>Canada:<p>StartupNorth <a href="http://jobs.startupnorth.ca/" rel="nofollow">http://jobs.startupnorth.ca/</a>
+For what it's worth (and as far as I'm aware), H1B visas are now capped (i.e. full) until October 1st, 2012 - applications are accepted from April 1st - so there may not be much sense in companies including the keyword "H1B" as requested, unless they're looking to fill a roll later in the year..
+
+Month after month, the same companies list the same opening here (with probably 30% shift.) I would love to know if the companies that relist aren't getting applicants, aren't getting the right applicants, have a high turnover or are (hopefully) just continuing to grow.
+Also, are any HNers getting hired from these threads? Success stories are the most needed ingredient to remind everyone that hiring is happening.
+
+Avenue of the stars seems like a really bad location to me. Poor access via public transit and awful commute times.
+
+We post on most of these threads and our batting average for hiring from them is MLB respectable. We have below-average turnover; we're just growing. Every single thread we've posted on has introduced us to candidates we were thrilled to talk to.
+HN is our single best hiring vector, both in quantity and quality.
+I think you can safely assume that people are getting hired from these threads.
+(I think posting the job thread on weekends is counterproductive and don't post in those months).
+
+Those companies are "permanently hiring". They're not trying to fill specific positions, but rather trying to skim interesting candidates.
+
+I've been posting to some of these threads occasionally, nothing ever happend. While I guess some of us are getting gigs out of it, I believe the majority probably don't. On the other hand, my skillset (doing PHP apps, but not a web designer) is not in demand to be fair.
+
+Sadly, I've only had one response from posting here (for Phunware, Inc.). Initially, my desire was that we hire solely from HN, but the reality hasn't lined up with that ideal.
+
+I'm a long time reader but don't post much. I was hired in NYC through a post on the Oct 2011 thread. Obviously I'd rate myself as amazing. The job isn't bad either hehe.
+
+Brad is one of my favorite people. I have more than once (briefly!) found myself wishing I hadn't started my current (successful) company so I could go work with him. The guy is "hustle" personified.
+If you're looking, ping Brad.
+
+I have a question related to MIT-LL: How particular are they about GPAs for graduate school? I'm given to understand they filter heavily on them for undergrad, but is that still the case for MS/PhD?
+
+GPAs tend me mean less in graduate school, but also tend to be very inflated. I would think you would still have issues if your GPA is in the 2.x range in graduate school.
+
+fyi, url's are giving 404's
+
+Wish I had the skillset necessary to apply. This sounds like an awesome place to work
+
+Not interested in switching companies just now, but you guys do nice work -- my girlfriend and I used data from your site (through my insurance provider) to haggle down the price on a Subaru WRX this weekend.
+
+Nice! I work in the same building. I had no idea TrueCar was doing Python/Django stuff right under me. I'd be interested to hear more about what you're doing if you ever have a chance to chat. I'll shoot you an email.
+I would guess that it may have been seen as a joke.... "adult company"..."many positions available"... April Fools... Just a guess :)
+That's fairly observant. Considering another post in this thread talked about joke posts. sigh And I was serious
+Jon is an awesome dude, and a great person to work with. In addition to having the best hair in all of The Mission, he and his team will no doubt go far in the only storefront sector. Can't imagine a cooler founder to work for!wish i knew ruby cuz this would be an awesome job.
+Um. Wow. If this isn't April Fool's...
+No, not April Fool's. It's an ambitious goal I accept though.
+Anyone hiring in New Zealand? My wife and I are in the process of migrating to NZ.
+Do you have a particular city in mind? I can make some suggestions on who/where to contact depending on your target city.
+What part of this post + you saying, on your very own website, "I have not, nor ever will attempt to solicit business on Hacker News," is honest?
+Count me as someone who doesn't want to see recruiters posting in "Who's hiring" regardless of how good they are.
+What's wrong with recruiters?
+I'm assuming you wouldn't have a problem if someone mentioned that their employer was hiring (ie. non-primary posting in general)
+You do seem like a good one, as far as they go, and I don't have anything, in general, against recruiters posting here. I don't think it's the best forum for your type, but there's no rule against it.
+What I took issue with was that you are internally inconsistent, yet claim to be "honest." Ha! Whatever it was that made you once say you WILL NEVER attempt to solicit business on Hacker News---well, obviously, you don't believe in that anymore.Relax.
+Surely Peroni has demonstrated sufficient value to the HN community to allow him to post in a "Who's hiring" thread without people getting on their critical high horse.
+Would you rather he sat on his hands if he has the perfect job for people here? I for one will be taking him up on his offer...if you have ever dealt with tech recruiters you will appreciate the service he is offering.
+ hope I didn't seem like I was piling on, and I wasn't annoyed by your post in the first place -- just thinking in terms of the general trend I'd like to see in these threads. Cheers.No I do understand your point. I have contacted the HN team to see if there is an option to pay for a formal job post but they don't want to start a trend of recruiter advertising which is understandable.
+ It was an interesting experiment and instead I may just set up an opt-in monthly mailing list exclusively for HN'ers with opportunities that I feel would be of interest. More on that later.That probably means "genetically modified" and not "created."
+ Yes, I'd hope so too :) There should be quite a few people who've successfully engineered microbes and plants (by extension, fungi), but for the others, I was wondering just how many candidates there could be.
+ Hi - I live in Lawrence and am interested, but I can't seem to find your email. Could you please post it?
+ Interesting product. Do you accept folks that are looking for telecommuting opportunities?
+ Potentially. We are also starting offices in many candian towns.
+ have any tips for applying? i sent in a resume the other day, but is there anything i can do/write/show to get a leg up on the process?
+ Anyone hiring in Japan?
+Yeah, I think you should start a "Who is looking for work?" thread instead, and keep Who Is Hiring for folks that are hiring.
+What's the youngest applicants are allowed to be? I'm 14, do I qualify? I've applied without a resume (because I don't have one), but would you guys actually consider a 14 year old?
+Sorry to say, but I highly suggest that you replace the profile pictures you guys use with photos where you actually smile or at least show some kind of enthusiasm.
+Also, the other parts of the website are not really working. Page not found.it seems like a development version of the website. Take away DEV, and you see they have the site down while the new one is built. seems like the guy was just giving you some sneak peaks into the team and the site in progress.Hipsters don't smile.
+They're cool photos, I prefer them to the usual cliches of geeks playing foosball, or having pizza parties, 'hey look at us, we're wacky and fun'.
+t all depends on whether it's a job board that hackers will find useful and not something like Monster.com. If it's sufficiently relevant and useful to thread readers, it should be posted. Don't be pedantic, don't make up rules.
+You're making an assumption that all job boards are of equal worth to HN'ers, when in actuality there's a wide variety. I'm sure some job boards (for example Techcrunch's Crunchboard) would get upvoted, while other less relevant ones such as Monster, etc. would get downvoted.
+To argue that HN'rs are incapable of distinguishing between job boards that they personally find useful from ones they don't seems a weak argument.
+Definitely. When we win, we get to steal one of your engineers. Our choice.
+My really good friend just sent you an email about this yesterday I believe. Just wanted to let you know (he found out about it through me, and I found out about it on here)
+Is "kicking the shit out of the 4:20 attitude" some sort of reference to marijuana usage? I'm not at all familiar with this turn of phrase.
+There's not much on this site, but I've known Jon for a decade and I think you'll be inspired by working with him on his (currently) quiet company.
+As an addition, if you're interested in working in the student space for LinkedIn, please contact me (email in profile). We're also looking for great engineers to tackle a very important market.
+Sign...what a lovely tech stack you have there.
+Just pinged you about two positions I saw!
+I imagine you aren't saying one must use vim, so asking for clarity (not that I'm looking, just saw that as odd).
+I believe it is more of description of people there. I personally like it, and count that as an important information when looking for employment.
+Just out of curiosity, what's the hardest data set in the world?
+If you don't mind me asking... If someone were already a good programmer, what is the baseline financial/statistical knowledge?
+I've heard several horror stories of EA working their developers very hard. Is this studio any different?
+Are we going to do a "Who is Hiring?" for remote positions this month?
+I think they are combined into one. This post is asking for the keyword REMOTE, search that to find remote positions.
+Hey Todd, does bit.ly take on interns at all?
+We do, although we're fairly full up on interns this summer. Feel free to shoot us an email though.
+Googling for working at amazon doesn't paint the rosiest of pictures. There are many posts about extreme frugality and poor work-life balance. Any chance I can get your take on it?
+could this position be working remotely? thx.
+For what it's worth, the Dominion online application form is really really bad.
+Can you talk a little bit more about the designer role? I don't see the job posted on your site.
+I've never heard of a Vietnam startup. Are there a bunch of you guys out there?
+Do you require a relocation to vietnam if you hire someone from the SF area?
+Anything in/near vegas?
+Any more information you can provide? I looked at kinex.com and all it says is "network design, system administration, software design professionals" which doesn't sound that physics-heavy.
+Mountain View, CA
+GOOGLE IS HIRING ALL YOUR PROGRAMMERS GIVE THEM TO US FOR THE OVERMINDExpect backlash about the "...unpaid interns" thing, especially when you're located in San Francisco, CA, USA of all places.
+
