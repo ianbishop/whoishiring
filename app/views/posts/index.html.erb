@@ -1,45 +1,38 @@
-<h1>Listing posts</h1>
+<ul class="breadcrumb">
+  <li class="active">Jobs</li>
+</ul>
 
-<table>
+
+<table class="zebra-striped">
   <tr>
+    <th></th>
+    <th>Position</th>
     <th>Company</th>
     <th>Author</th>
-    <th>Content</th>
     <th>Location</th>
-    <th>Intern</th>
-    <th>Remote</th>
-    <th>Full time</th>
-    <th>Latitude</th>
-    <th>Longitude</th>
-    <th>Gmaps</th>
-    <th></th>
-    <th></th>
     <th></th>
   </tr>
 
 <% @posts.each do |post| %>
   <tr>
+    <td>
+      <% if post.intern %> 
+        <span class="label success">Intern</span>
+      <% end %>
+      <% if post.full_time %> 
+        <span class="label warning">Full Time</span>
+      <% end %>
+      <% if post.remote %> 
+        <span class="label important">Remote</span>
+      <% end %>
+    </td>
+    <td><%= post.position %></td>
     <td><%= post.company %></td>
-    <td><%= post.author %></td>
-    <td><%= post.content %></td>
+    <td><%= link_to post.author, "http://news.ycombinator.com/user?id=#{post.author}" %></td>
     <td><%= post.location %></td>
-    <td><%= post.intern %></td>
-    <td><%= post.remote %></td>
-    <td><%= post.full_time %></td>
-    <td><%= post.latitude %></td>
-    <td><%= post.longitude %></td>
-    <td><%= post.gmaps %></td>
     <td><%= link_to 'Show', post %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
-<br />
-
-<%= gmaps4rails(@json) %>
-
-<br />
-
-<%= link_to 'New Post', new_post_path %>
+<%= paginate @posts %>

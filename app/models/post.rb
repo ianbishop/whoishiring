@@ -6,6 +6,7 @@ class Post
   key :author, String
   key :content, String
   key :location, String
+  key :position, String
   key :intern, Boolean
   key :remote, Boolean
   key :full_time, Boolean
@@ -27,5 +28,4 @@ class Post
   def gmaps4rails_address
       "#{self.company}, #{self.location}"
   end
-
 end

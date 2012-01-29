@@ -1,55 +1,54 @@
-<p id="notice"><%= notice %></p>
+<ul class="breadcrumb">
+  <li><%= link_to "Jobs", posts_path %><span class="divider">/</span></li>
+  <li class="active"><%= "#{@post.position} at #{@post.company}" %></li>
+</ul>
 
-<p>
-  <b>Company:</b>
-  <%= @post.company %>
-</p>
+<% if !notice.blank? %>
+<div id="notice" class="alert-message info">
+  <a class="close" href="#">x</a>
+  <p><strong>Something happened!</strong> <%= notice %></p>
+</div>
+<% end %>
 
-<p>
-  <b>Author:</b>
-  <%= @post.author %>
-</p>
+<h1><%= @post.position %> at <%= @post.company %></h1>
 
-<p>
-  <b>Content:</b>
-  <%= @post.content %>
-</p>
-
-<p>
-  <b>Location:</b>
-  <%= @post.location %>
-</p>
-
-<p>
-  <b>Intern:</b>
-  <%= @post.intern %>
-</p>
-
-<p>
-  <b>Remote:</b>
-  <%= @post.remote %>
-</p>
-
-<p>
-  <b>Full time:</b>
-  <%= @post.full_time %>
-</p>
-
-<p>
-  <b>Latitude:</b>
-  <%= @post.latitude %>
-</p>
-
-<p>
-  <b>Longitude:</b>
-  <%= @post.longitude %>
-</p>
-
-<p>
-  <b>Gmaps:</b>
-  <%= @post.gmaps %>
-</p>
-
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<div class="row">
+  <div class="span11"> 
+    <p>
+      <b>Position:</b>
+      <%= @post.position %>
+    </p>
+    <p>
+      <b>Company:</b>
+      <%= @post.company %>
+    </p>
+    <p>
+      <b>Location:</b>
+      <%= @post.location %>
+    </p>
+    <p>
+      <b>Original Post:</b>
+      <%= @post.content %>
+    </p>
+    <p>
+      <b>Contact(s):</b>
+      <ul>
+      <% @post.emails.each do |email| %>
+        <li><%= email %></li>
+      <% end %> 
+      </ul>  
+    </p>
+    <p>
+      <b>Website(s):</b>
+      <ul>
+        <% @post.urls.each do |url| %>
+          <li><%= link_to url, url %></li>
+        <% end %>
+      </ul>
+    </p>
+  </div>
+  <div class="span5">
+    <%= gmaps4rails(@json) 
+  %>
+  </div>
+</div>
