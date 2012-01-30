@@ -29,7 +29,7 @@ class UpdatePosts
       item = result[:item]
      
       #feed it to the classifier
-      content = item[:text].gsub(/<.*>.*<\/.*>/, '').gsub(/<.*>/,'').gsub(/[\.\'\"\;\!\:\(\)\-\{\}]/,'')
+      content = item[:text]
       document = content.downcase
 
       if @classifier.classify(document) == 'hiring'
