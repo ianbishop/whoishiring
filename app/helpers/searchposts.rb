@@ -29,18 +29,33 @@ class UpdatePosts
       item = result[:item]
      
       #feed it to the classifier
-      content = item[:text].gsub(/<.*>.*<\/.*>/, '').gsub(/<.*>/,'').gsub(/[\.\'\"\;\!\:\(\)\-\{\}]/,'')
+      content = item[:text]
       document = content.downcase
 
       if @classifier.classify(document) == 'hiring'
-        post = Post.new
-        post.content = content
-        post.author = item[:username]
-        post.intern = (document.include? "intern")
-        post.remote = (document.include? "remote")
-        post.honeb = (document.include? "h1b")
-        post.full_time = !(document.include? "part time" or document.include? "part-time")
-        post.save!
+        user_post = Post.where({:author => item[:username]}).first
+        
+        if user_post.nil? or item[:create_ts] > user_post.create_ts
+                
+          post = Post.new
+          post.content = content
+          post.author = item[:username]
+          post.intern = (document.include? "intern")
+          post.remote = (document.include? "remote")
+          post.honeb = (document.include? "h1b")
+          
+          #Get e-mails from content
+          content.split.each do |word|
+            if /\w*@\w*\.\w*/.match(word)
+              post.emails << word
+            end
+          end
+
+          post.create_ts = item[:create_ts]
+          post.save(:validate => false)
+
+          user_post.destroy unless user_post.nil?
+        end
       end
     end
   end
