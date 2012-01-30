@@ -7,10 +7,10 @@ class Post
   key :content, String
   key :location, String
   key :position, String
+  key :create_ts, String
   key :intern, Boolean
   key :remote, Boolean
   key :honeb, Boolean
-  key :full_time, Boolean
   key :latitude, Float
   key :longitude, Float
   key :address, String
