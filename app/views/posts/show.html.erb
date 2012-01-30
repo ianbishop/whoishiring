@@ -19,9 +19,6 @@
 <% if @post.intern %>
   <span class="label success">Intern</span>
 <% end %>
-<% if @post.full_time %> 
-  <span class="label warning">Full Time</span>
-<% end %>
 <% if @post.remote %> 
   <span class="label important">Remote</span>
 <% end %>
@@ -42,8 +39,13 @@
       <%= @post.location %>
     </p>
     <p>
+      <b>User:</b>
+      <%= link_to @post.author, "http://news.ycombinator.com/user?id=#{@post.author}" %>
+    </p>
+    <p>
       <b>Original Post:</b>
-      <%= @post.content %>
+      <br/>
+      <%= raw @post.content %>
     </p>
     <p>
       <b>Contact(s):</b>
