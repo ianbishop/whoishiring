@@ -16,7 +16,7 @@
 <% @posts.each do |post| %>
   <tr>
     <td>
-      <% if post.intern %> 
+      <% if post.intern %>
         <span class="label success">Intern</span>
       <% end %>
       <% if post.full_time %> 
@@ -24,6 +24,9 @@
       <% end %>
       <% if post.remote %> 
         <span class="label important">Remote</span>
+      <% end %>
+      <% if post.honeb %>
+        <span class="label notice">H1B</span>
       <% end %>
     </td>
     <td><%= post.position %></td>

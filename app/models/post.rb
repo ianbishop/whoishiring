@@ -28,6 +28,6 @@ class Post
   end
 
   def gmaps4rails_address
-      "#{self.company}, #{self.location}"
+      self.location
   end
 end
