@@ -1,4 +1,5 @@
 require 'naiveclassifier'
+require 'uri'
 
 class UpdatePosts
   def initialize
@@ -23,14 +24,17 @@ class UpdatePosts
     ids
   end
 
+  def edit_distance
+    
+  end
+
   def get_posts(id)
     query = @client.search("items", "", { "filter[fields][parent_sigid][]" => id, :limit => "100"} )
     query[:results].each do |result|
       item = result[:item]
      
       #feed it to the classifier
-      content = item[:text]
-      document = content.downcase
+      document = item[:text].downcase
 
       if @classifier.classify(document) == 'hiring'
         user_post = Post.where({:author => item[:username]}).first
@@ -38,18 +42,24 @@ class UpdatePosts
         if user_post.nil? or item[:create_ts] > user_post.create_ts
                 
           post = Post.new
-          post.content = content
+          post.content = item[:text]
           post.author = item[:username]
           post.intern = (document.include? "intern")
           post.remote = (document.include? "remote")
           post.honeb = (document.include? "h1b")
-          
-          #Get e-mails from content
-          content.split.each do |word|
-            if /\w*@\w*\.\w*/.match(word)
-              post.emails << word
-            end
+
+          document.split.each do |word|
+            post.emails << word if /\w*@\w*\.\w*/.match(word)
           end
+          
+          #Get urls
+          doc = Nokogiri::HTML(item[:text])
+          doc.css('a').each do |url|
+            post.urls << url[:href]
+          end
+
+          # company name, this gonna be dirty.
+          
 
           post.create_ts = item[:create_ts]
           post.save(:validate => false)
