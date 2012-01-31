@@ -42,7 +42,7 @@ class CompanyParser
     name_occurences.default = 0
     post.split(" ").each do |word|
       potential_names.each do |potential_name|
-        name_occurences[word] += 1 if word.downcase =~ /^(www.)?\b#{potential_name}\b/
+        name_occurences[potential_name.capitalize] += 1 if word.downcase =~ /^(http:\/\/)?^(www.)?\b#{potential_name}\b/
       end
     end
 
@@ -57,7 +57,10 @@ class CompanyParser
     potential_names = []
 
     urls.each do |url|
-      host_name = URI.parse(url).host
+      begin
+         host_name = URI.parse(url).host
+      rescue URI::Error => e 
+      end
 
       unless host_name.nil?
         host_name = host_name[4..host_name.length] if host_name.start_with? 'www.'
@@ -74,7 +77,7 @@ class CompanyParser
           end
         else
           potential_names << domain_and_tld[0]
-          potential_names << domain_and_tld.join("") # matches canv.as, visua.ly etc
+          #potential_names << domain_and_tld.join("") # matches canv.as, visua.ly etc
         end
       end
     end
@@ -91,10 +94,9 @@ class CompanyParser
 
     potential_names = potential_names_for_urls(urls)
     potential_names.each do |potential_name|
-      candidate = backtrack_dict_url(potential_name, [], 0)
+      candidate = backtrack_dict_url(potential_name)
       unless candidate.empty?
         scores = score_dict_url_candidate(post, candidate)
-        p scores
         unless scores.empty?
           max = scores.max
           scored_candidates[max[0]] = max[1]
@@ -109,19 +111,22 @@ class CompanyParser
     end
   end
 
-  def backtrack_dict_url(url, words, index)
-    # base cases
-    return words if index == url.length
-    return [] if index == -1
+  def backtrack_dict_url(url)
+    words = []
+    index = 0
 
-    word = @trie.longest_prefix(url[index..url.length])
-    if word.nil?
-      return backtrack_dict_url(url, words[0..words.length-1], index - words[-1].length - 1)
-    else
-      words << word.capitalize
-      index += word.length
-      return backtrack_dict_url(url, words, index)
+    20.times do
+      return words if index == url.length
+
+      word = @trie.longest_prefix(url[index..url.length])
+      if word.nil?
+        index -= words.pop.length-1
+      else
+        words << word.capitalize
+        index += word.length
+      end
     end
+    return []
   end
 
   def score_dict_url_candidate(post, words)

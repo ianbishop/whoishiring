@@ -9,6 +9,7 @@
 
 #Ignore our vim swp files.
 *.swp
+*.swo
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
