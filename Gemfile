@@ -30,6 +30,8 @@ gem 'kaminari'
 gem 'rufus-scheduler'
 gem 'hacker_news_search'
 gem 'stemmer'
+
+gem 'nokogiri'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

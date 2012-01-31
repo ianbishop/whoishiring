@@ -83,6 +83,7 @@ GEM
       plucky (~> 0.4.0)
     multi_json (1.0.4)
     multipart-post (1.1.4)
+    nokogiri (1.5.0)
     plucky (0.4.4)
       mongo (~> 1.5)
     polyglot (0.3.3)
@@ -146,6 +147,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   mongo_mapper
+  nokogiri
   rails (= 3.2.0)
   rufus-scheduler
   sass-rails (~> 3.2.3)
