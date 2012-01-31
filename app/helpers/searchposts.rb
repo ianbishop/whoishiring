@@ -1,10 +1,12 @@
 require 'naiveclassifier'
 require 'uri'
+require 'company_parser'
 
 class UpdatePosts
   def initialize
     @client = HackerNewsSearch.new
     @classifier = Classifier.new
+    @company_parser = CompanyParser.new
     @classifier.train("hiring", "app/helpers/whoishiring.txt")
     @classifier.train("not hiring", "app/helpers/whoisnothiring.txt")
   end
@@ -26,9 +28,6 @@ class UpdatePosts
 
   def update_posts
     #Get the newest batch of posts, start with the most recent id
-  end
-  def edit_distance
-    
   end
 
   def parse_emails(document)
@@ -82,9 +81,11 @@ class UpdatePosts
           #Get urls
           doc = Nokogiri::HTML(item[:text])
           doc.css('a').each do |url|
-            post.urls << url[:href]
+            safe_url = url[:href].gsub(/<\/?[^>]*>/, "")
+            post.urls << safe_url
           end
          
+          post.company = @company_parser.parse(item[:text], post.urls)
           #Get technologies from content
           techs = File.open('lib/files/languages.txt').readlines.map! do |e| e=e.chop end
           techs.each do |tech|
