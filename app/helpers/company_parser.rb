@@ -131,7 +131,13 @@ class CompanyParser
 
   def score_dict_url_candidate(post, words)
     #only implimenting x y z for now
-    return { words.join(" ") => post.downcase.count(words.join(" ")) }
+    match_data = post.downcase.match(/\b#{words.join(" ")}\b/)
+    
+    unless match_data.nil?
+      return { words.join(" ") => match_data.length }
+    else
+      return { words.join(" ") => 0 }
+    end
   end
 
   # Attempts to find least common word associations in the string
