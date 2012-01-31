@@ -9,7 +9,7 @@ class UpdatePosts
     @classifier.train("not hiring", "app/helpers/whoisnothiring.txt")
   end
 
-  def get_hiring_ids(limit)
+  def get_ids(limit)
     ids = []
 
     query = @client.search("items", "Ask HN: Who is Hiring?",
@@ -29,6 +29,32 @@ class UpdatePosts
   end
   def edit_distance
     
+  end
+
+  def parse_emails(document)
+    #Try to get a little more sophisticated with the e-mail parser. Regular and obfuscated emails.
+    #Also obfuscate regular e-mails
+    emails = []
+    #Get rid of html tag issues
+    document = document.gsub(/\<p\>/, ' ')
+    #How about weirder obfuscation?
+    document = document.gsub(/ *[\[\{\<] *a *t *[\]\}\>] */, '@')
+    document = document.gsub(/ *[\[\{\<] *dot *[\]\}\>] */, '.')
+
+    #What about that case where people run all their stuff together and it's like mikeATwhateverDOTcom?
+    document = document.gsub(/([a-z0-9])at([a-z0-9])dot([a-z0-9])/, '<\1>@<\2>.<\3>')
+
+    #Lets take a look at regular e-mails and obfuscate them.
+    document = document.gsub(/\<p\>/, ' ')
+    document.split(' ').each do |word|
+      email_to_uglify = word if /\w*@\w*\.\w*/.match(word)
+      if !email_to_uglify.nil?
+        email_to_uglify = email_to_uglify.gsub(/\./, ' [ dot ] ').gsub(/@/, ' [ at ] ') 
+        emails << email_to_uglify
+      end
+    end
+    
+    emails
   end
 
   def get_posts(id)
@@ -51,9 +77,7 @@ class UpdatePosts
           post.remote = (document.include? "remote")
           post.honeb = (document.include? "h1b")
 
-          document.split.each do |word|
-            post.emails << word if /\w*@\w*\.\w*/.match(word)
-          end
+         post.emails = parse_emails(document) 
           
           #Get urls
           doc = Nokogiri::HTML(item[:text])
