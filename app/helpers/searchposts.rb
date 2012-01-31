@@ -23,6 +23,10 @@ class UpdatePosts
     ids
   end
 
+  def update_posts
+    #Get the newest batch of posts, start with the most recent id
+  end
+
   def get_posts(id)
     query = @client.search("items", "", { "filter[fields][parent_sigid][]" => id, :limit => "100"} )
     query[:results].each do |result|
@@ -48,6 +52,14 @@ class UpdatePosts
           content.split.each do |word|
             if /\w*@\w*\.\w*/.match(word)
               post.emails << word
+            end
+          end
+         
+          #Get technologies from content
+          techs = File.open('lib/files/languages.txt').readlines.map! do |e| e=e.chop end
+          techs.each do |tech|
+            if document.include? tech.downcase
+              post.technologies << tech
             end
           end
 
