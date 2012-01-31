@@ -1,5 +1,6 @@
 require 'naiveclassifier'
 require 'uri'
+require 'cities'
 
 class UpdatePosts
   def initialize
@@ -7,6 +8,7 @@ class UpdatePosts
     @classifier = Classifier.new
     @classifier.train("hiring", "app/helpers/whoishiring.txt")
     @classifier.train("not hiring", "app/helpers/whoisnothiring.txt")
+    @cityparser = Cities.new
   end
 
   def get_ids(limit)
@@ -76,8 +78,9 @@ class UpdatePosts
           post.intern = (document.include? "intern")
           post.remote = (document.include? "remote")
           post.honeb = (document.include? "h1b")
+          post.location = @cityparser.parse_cities(document)
 
-         post.emails = parse_emails(document) 
+          post.emails = parse_emails(document) 
           
           #Get urls
           doc = Nokogiri::HTML(item[:text])
