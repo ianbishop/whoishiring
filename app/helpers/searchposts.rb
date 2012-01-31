@@ -24,6 +24,9 @@ class UpdatePosts
     ids
   end
 
+  def update_posts
+    #Get the newest batch of posts, start with the most recent id
+  end
   def edit_distance
     
   end
@@ -56,6 +59,14 @@ class UpdatePosts
           doc = Nokogiri::HTML(item[:text])
           doc.css('a').each do |url|
             post.urls << url[:href]
+          end
+         
+          #Get technologies from content
+          techs = File.open('lib/files/languages.txt').readlines.map! do |e| e=e.chop end
+          techs.each do |tech|
+            if document.include? tech.downcase
+              post.technologies << tech
+            end
           end
 
           # company name, this gonna be dirty.

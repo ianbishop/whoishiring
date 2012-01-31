@@ -8,6 +8,7 @@
     <th></th>
     <th>Position</th>
     <th>Company</th>
+    <th>Technologies</th>
     <th>Author</th>
     <th>Location</th>
     <th></th>
@@ -28,6 +29,7 @@
     </td>
     <td><%= post.position %></td>
     <td><%= post.company %></td>
+    <td><%= post.technologies.join(", ") %></td>
     <td><%= link_to post.author, "http://news.ycombinator.com/user?id=#{post.author}" %></td>
     <td><%= post.location %></td>
     <td><%= link_to 'Show', post %></td>

@@ -1,6 +1,5 @@
 ActionScript
 Flash
-C
 Linux
 C#
 asp.net
@@ -12,7 +11,6 @@ Clojure
 CoffeeScript
 Erlang
 F#
-Go
 Groovy
 Haskell
 Java
@@ -32,9 +30,10 @@ Lua
 Objective-C
 Perl
 PHP
-R
 Scala
 Ruby
 mongo db  
+mongodb
 Python
 django
+iOS

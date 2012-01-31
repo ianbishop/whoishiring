@@ -17,6 +17,7 @@ class Post
   key :gmaps, Boolean
   key :emails, Array
   key :urls, Array
+  key :technologies, Array
   timestamps!
 
   acts_as_gmappable :lat => 'latitude', :lon => 'longitude', :process_geocoding => true,
