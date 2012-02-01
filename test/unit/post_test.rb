@@ -1,13 +1,13 @@
 require 'test_helper'
-require 'company_parser'
-require 'naiveclassifier'
+require 'parsers/company'
+require 'utils/classifier'
 
 class PostTest < ActiveSupport::TestCase
 
   def setup
     classifier = Classifier.new
     classifier.train("hiring", "lib/files/whoishiring.txt")
-    @company_parser = CompanyParser.new(classifier)
+    @company_parser = Company.new(classifier)
   end
 
   def teardown

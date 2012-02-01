@@ -127,8 +127,6 @@ class Company
     index = 0
     prev_length = url.length
     10.times do
-      p words, index, prev_length
-      sleep 2
       if index == url.length
         all_words << words
         p words
