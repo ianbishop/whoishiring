@@ -1,6 +1,7 @@
 require 'test_helper'
 require 'parsers/company'
 require 'utils/classifier'
+require 'parsers/city'
 
 class PostTest < ActiveSupport::TestCase
 
@@ -8,10 +9,42 @@ class PostTest < ActiveSupport::TestCase
     classifier = Classifier.new
     classifier.train("hiring", "lib/files/whoishiring.txt")
     @company_parser = Company.new(classifier)
+    @city_parser = City.new
   end
 
   def teardown
     @company_parser = nil
+  end
+
+  test "all city regular expressions should be non-nil" do
+    patterns = @city_parser.get_full_matchers
+    patterns.each do |pattern|
+      assert_not_equal(pattern, nil)
+    end
+  end
+
+  test "full pattern regular expressions should be well formed" do
+    patterns = @city_parser.get_full_matchers
+    one_match = false 
+    match_string = "Hey we're a shop out of San Francisco, California"
+    patterns.each do |pattern|
+      if pattern.match(match_string)
+        one_match = true
+      end
+    end
+    assert(one_match)
+  end
+
+  test "partial pattern regular expressions should be well formed" do
+    patterns = @city_parser.get_abbrev_matchers
+    one_match = false
+    match_string = "Hey we're a shop out of San Francisco, CA bro"
+    patterns.each do |pattern|
+      if pattern.match(match_string)
+        one_match = true
+      end
+    end
+    assert(one_match)
   end
 
   test "should recognize full url company names" do

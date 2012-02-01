@@ -101,14 +101,14 @@ Oxnard, California, CA
 Fontana, California, CA
 Augusta , Georgia, GA
 Mobile, Alabama, AL
-Little Rock, Arkansas
+Little Rock, Arkansas, AR
 Moreno Valley, California, CA
 Glendale, California, CA
 Amarillo, Texas, TX
 Huntington Beach, California, CA
 Columbus, Georgia, GA
 Grand Rapids, Michigan, MI
-Salt Lake City, Utah
+Salt Lake City, Utah, UT
 Tallahassee, Florida, FL
 Worcester, Massachusetts, MA
 Newport News, Virginia, VA
@@ -117,7 +117,7 @@ Knoxville, Tennessee, TN
 Santa Clarita, California, CA
 Grand Prairie, Texas, TX
 Brownsville, Texas, TX
-Jackson, Mississippi
+Jackson, Mississippi, MS 
 Overland Park, Kansas, KS
 Garden Grove, California, CA
 Santa Rosa, California, CA
@@ -169,7 +169,7 @@ McKinney, Texas, TX
 McAllen, Texas, TX
 New Haven, Connecticut, CT
 Sterling Heights, Michigan, MI
-West Valley City, Utah
+West Valley City, Utah, UT
 Killeen, Texas, TX
 Topeka, Kansas, KS
 Thousand Oaks, California, CA
@@ -207,7 +207,7 @@ Ann Arbor, Michigan, MI
 El Monte, California, CA
 Denton, Texas, TX
 Berkeley, California, CA
-Provo, Utah
+Provo, Utah, UT
 Downey, California, CA
 Midland, Texas, TX
 Norman, Oklahoma, OK
@@ -234,7 +234,7 @@ Cambridge, Massachusetts, MA
 Wichita Falls, Texas, TX
 Billings, Montana, MT
 Green Bay, Wisconsin, WI
-West Jordan, Utah
+West Jordan, Utah, UT
 Richmond, California, CA
 Murrieta, California, CA
 Burbank, California, CA
@@ -268,7 +268,7 @@ Cary, North Carolina, NC
 Columbia, South Carolina, SC
 Elizabeth, New Jersey, NJ
 Charleston, South Carolina, SC
-Manchester, New Hampshire
+Manchester, New Hampshire, NH
 Wilmington, North Carolina, NC
 Fargo, North Dakota, ND
 High Point, North Carolina, NC
