@@ -1,13 +1,17 @@
 require 'uri'
-require 'trie.rb'
+require 'trie'
+require 'naiveclassifier'
 
 class CompanyParser
   
-  def initialize
+  def initialize(classifier)
     @trie = Trie.new
     File.open('lib/files/dict').readlines.each do |line|
       word = line.chomp
       @trie.push(word, word.length)
+    end
+    classifier.words['hiring'].keys.each do |key|
+      @trie.push(key, key.length)
     end
   end
 
@@ -21,6 +25,10 @@ class CompanyParser
       ngrams_candidate = best_ngrams_match(post)
       return ngrams_candidate unless ngrams_candidate.nil?
     else
+      # remove URLs out of the picture
+      urls.each do |url|
+        post = post.gsub(url, "")
+      end
       # try URL based techniques
       full_url_candidate = best_full_url_match(post, urls)
       return full_url_candidate unless full_url_candidate.nil?
@@ -42,7 +50,7 @@ class CompanyParser
     name_occurences.default = 0
     post.split(" ").each do |word|
       potential_names.each do |potential_name|
-        name_occurences[potential_name.capitalize] += 1 if word.downcase =~ /^(http:\/\/)?^(www.)?\b#{potential_name}\b/
+        name_occurences[word] += 1 if word.downcase =~ /^(http:\/\/)?^(www.)?\b#{potential_name}\b/
       end
     end
 
@@ -77,7 +85,8 @@ class CompanyParser
           end
         else
           potential_names << domain_and_tld[0]
-          #potential_names << domain_and_tld.join("") # matches canv.as, visua.ly etc
+          potential_names << domain_and_tld.join("") # matches canvas
+          potential_names << domain_and_tld.join(".") # matches visua.ly
         end
       end
     end
@@ -112,16 +121,30 @@ class CompanyParser
   end
 
   def backtrack_dict_url(url)
+    url = url.strip
+    all_words = []
     words = []
     index = 0
+    prev_length = url.length
+    10.times do
+      p words, index, prev_length
+      sleep 2
+      if index == url.length
+        all_words << words
+        p words
+        k = words.pop.length
+        prev_length = k-2
+        index -= k
+      end
+      return [] if index == -1 or prev_length <= 0
 
-    20.times do
-      return words if index == url.length
-
-      word = @trie.longest_prefix(url[index..url.length])
+      word = @trie.longest_prefix(url[index..index+prev_length])
       if word.nil?
-        index -= words.pop.length-1
+        k = words.pop.length
+        prev_length = k-2
+        index -= k
       else
+        prev_length = url.length-index
         words << word.capitalize
         index += word.length
       end
@@ -129,15 +152,19 @@ class CompanyParser
     return []
   end
 
-  def score_dict_url_candidate(post, words)
-    #only implimenting x y z for now
-    match_data = post.downcase.match(/\b#{words.join(" ")}\b/)
-    
-    unless match_data.nil?
-      return { words.join(" ") => match_data.length }
-    else
-      return { words.join(" ") => 0 }
+  def score_dict_url_candidate(post, all_words)
+    scores = {}
+    scores.default = 0
+
+    all_words.each do |words|
+      match_data = post.downcase.match(/\b#{words.join(" ")}\b/)
+
+      unless match_data.nil?
+        scores[words.join(" ")] =  match_data.length
+      end
     end
+
+    return scores
   end
 
   # Attempts to find least common word associations in the string

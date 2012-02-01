@@ -1,10 +1,13 @@
 require 'test_helper'
 require 'company_parser'
+require 'naiveclassifier'
 
 class PostTest < ActiveSupport::TestCase
 
   def setup
-    @company_parser = CompanyParser.new
+    classifier = Classifier.new
+    classifier.train("hiring", "app/helpers/whoishiring.txt")
+    @company_parser = CompanyParser.new(classifier)
   end
 
   def teardown
@@ -47,7 +50,7 @@ class PostTest < ActiveSupport::TestCase
     * SVG<p>Learn more: <a href=\"http://visual.ly/about/jobs\" rel=\"nofollow\">http://visual.ly/about/jobs</a>"
     post_urls = ["http://visual.ly/about/jobs"]
 
-    assert_equal(@company_parser.parse(post_content, post_urls), "Visua.ly", "Company name is directly in the URL.TLD")
+    assert_equal(@company_parser.parse(post_content, post_urls), "Visual.ly", "Company name is directly in the URL.TLD")
   end
 
   test "should recognize common dictionary work company names" do
@@ -67,7 +70,7 @@ class PostTest < ActiveSupport::TestCase
   end
 
   test "should match based on word occurences" do
-    post_content "New York City<p>Scholastic (the children's book publisher)<p>- Game Design &#38; Production Intern<p>- Game Art Intern<p>Both are six month paid internships. If you're in school, we're happy to work with you to set up academic credit. Full time preferred, but part time is possible as well.<p>gbrown@scholastic.com"
+    post_content = "New York City<p>Scholastic (the children's book publisher)<p>- Game Design &#38; Production Intern<p>- Game Art Intern<p>Both are six month paid internships. If you're in school, we're happy to work with you to set up academic credit. Full time preferred, but part time is possible as well.<p>gbrown@scholastic.com"
     post_urls = []
 
     assert_equal(@company_parser.parse(post_content, post_urls), "Scholastic", "Company name can be deduced by strange word occurences")
