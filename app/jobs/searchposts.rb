@@ -7,9 +7,9 @@ class UpdatePosts
   def initialize
     @client = HackerNewsSearch.new
     @classifier = Classifier.new
-    @company_parser = CompanyParser.new
-    @classifier.train("hiring", "app/helpers/whoishiring.txt")
-    @classifier.train("not hiring", "app/helpers/whoisnothiring.txt")
+    @classifier.train("hiring", "lib/files/whoishiring.txt")
+    @classifier.train("not hiring", "lib/files/whoisnothiring.txt")
+    @company_parser = CompanyParser.new(@classifier)
     @cityparser = Cities.new
   end
 

@@ -2,7 +2,7 @@ require 'stemmer'
 require 'set'
 
 class Classifier
-    attr_accessor :word_occurrences, :numwords
+    attr_accessor :word_occurrences, :numwords, :words
                
    def initialize
        @word_occurrences = {}
