@@ -50,11 +50,7 @@ class Company
     name_occurences.default = 0
     post.split(" ").each do |word|
       potential_names.each do |potential_name|
-        if word.downcase =~ /\b#{potential_name}\b/
-          word = word.chomp if word.end_with? '.'
-          word = word[0..word.length-2] if word.end_with? '\'s'
-          word = word.gsub('STUFF_GOES_HERE','')
-        end
+        name_occurences[word.gsub(/[,\)\(:]/,"")] += 1 if word.downcase =~ /^(http:\/\/)?^(www.)?\b#{potential_name}\b/
       end
     end
 
