@@ -6,7 +6,7 @@ class PostTest < ActiveSupport::TestCase
 
   def setup
     classifier = Classifier.new
-    classifier.train("hiring", "app/helpers/whoishiring.txt")
+    classifier.train("hiring", "lib/files/whoishiring.txt")
     @company_parser = CompanyParser.new(classifier)
   end
 
