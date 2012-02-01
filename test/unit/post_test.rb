@@ -32,7 +32,7 @@ class PostTest < ActiveSupport::TestCase
         one_match = true
       end
     end
-    assert(one_match)
+    assert(one_match, "Didn't match a full pattern city, state combination")
   end
 
   test "partial pattern regular expressions should be well formed" do
@@ -44,7 +44,7 @@ class PostTest < ActiveSupport::TestCase
         one_match = true
       end
     end
-    assert(one_match)
+    assert(one_match, "Didn't match a well known city")
   end
 
   test "should recognize full url company names" do

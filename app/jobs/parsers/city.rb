@@ -18,7 +18,7 @@ class City
   def get_full_matchers 
     expressions = []
     @cities_states.each do |key, value|
-      full_pattern = /#{key.strip + ", " + value.strip}/
+      full_pattern = /#{key.strip + "\, " + value.strip}/
       expressions << full_pattern 
     end
     expressions
@@ -29,7 +29,7 @@ class City
     expressions = []
     @cities_states.each do |key, value|
       state_abbrev = @states_abbrev[value]
-      pattern = /#{key.strip + ", " + state_abbrev}/
+      pattern = /#{key.strip + "\, " + state_abbrev.strip}/
       expressions << pattern
     end
     expressions
@@ -38,6 +38,12 @@ class City
   def parse_cities(document)
     city = "Unknown"
     full_patterns = self.get_full_matchers 
+    partial_patterns = self.get_partial_matchers
+
+    full_patterns.each do |full|
+      if full.match(document)
+      end
+    end
 
     city
   end
