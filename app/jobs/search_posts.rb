@@ -33,7 +33,7 @@ class SearchPosts
     #Also obfuscate regular e-mails
     document = post[:content]
 
-    emails = []
+    post.emails = []
     #Get rid of html tag issues
     document = document.gsub(/\<p\>/, ' ')
     #How about weirder obfuscation?
@@ -58,6 +58,7 @@ class SearchPosts
 
   def populate_urls(post)
     #Get urls
+    post.urls = []
     document = post[:content]
     doc = Nokogiri::HTML(document)
     doc.css('a').each do |url|
@@ -82,6 +83,7 @@ class SearchPosts
   end
 
   def parse_technologies(post)
+    post.technologies = []
     document = post[:content]
     #Get technologies from content
     techs = File.open('lib/files/languages.txt').readlines.map! do |e| e=e.chop end

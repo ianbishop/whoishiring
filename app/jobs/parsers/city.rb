@@ -24,23 +24,20 @@ class City
     expressions
   end
 
+  def get_abbrev_matchers
+    #These match states with two-letter abbreviations like IL, CA et al
+    expressions = []
+    @cities_states.each do |key, value|
+      state_abbrev = @states_abbrev[value]
+      pattern = /#{key.strip + ", " + state_abbrev}/
+      expressions << pattern
+    end
+    expressions
+  end
+
   def parse_cities(document)
     city = "Unknown"
-    @cities_states.each do |key, value|
-      #Can we find full city, full state?
-      if full_pattern.match(document) 
-        city = key + " " + value
-        break
-      end
-
-      #How about city, abbrev?
-      unless @states_abbrev[value].nil?
-        abbrev_pattern = /#{key.strip + ", " + @states_abbrev[value]}/
-        if abbrev_pattern.match(document)
-          city = key + " " + value
-        end
-      end
-    end
+    full_patterns = self.get_full_matchers 
 
     city
   end
