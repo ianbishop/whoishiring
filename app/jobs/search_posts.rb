@@ -1,16 +1,16 @@
-require 'naiveclassifier'
+require 'utils/classifier'
 require 'uri'
-require 'company_parser'
-require 'cities'
+require 'parsers/company'
+require 'parsers/city'
 
-class UpdatePosts
+class SearchPosts
   def initialize
     @client = HackerNewsSearch.new
     @classifier = Classifier.new
     @classifier.train("hiring", "lib/files/whoishiring.txt")
     @classifier.train("not hiring", "lib/files/whoisnothiring.txt")
-    @company_parser = CompanyParser.new(@classifier)
-    @cityparser = Cities.new
+    @company_parser = Company.new(@classifier)
+    @cityparser = City.new
   end
 
   def get_ids(limit)

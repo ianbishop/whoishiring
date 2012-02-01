@@ -1,6 +1,6 @@
 require 'set'
 
-class Cities
+class City
 
   def initialize
     @states_abbrev = {}
