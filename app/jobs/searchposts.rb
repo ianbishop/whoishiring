@@ -58,6 +58,17 @@ class UpdatePosts
     emails
   end
 
+  def populate_urls(post)
+    #Get urls
+    document = post[:content]
+    doc = Nokogiri::HTML(document])
+    doc.css('a').each do |url|
+      safe_url = url[:href].gsub(/<\/?[^>]*>/, "")
+      post.urls << safe_url
+    end
+    post.save(:validate => false)
+  end
+
   def get_posts(id)
     query = @client.search("items", "", { "filter[fields][parent_sigid][]" => id, :limit => "100"} )
     query[:results].each do |result|
@@ -81,12 +92,6 @@ class UpdatePosts
 
           post.emails = parse_emails(document) 
           
-          #Get urls
-          doc = Nokogiri::HTML(item[:text])
-          doc.css('a').each do |url|
-            safe_url = url[:href].gsub(/<\/?[^>]*>/, "")
-            post.urls << safe_url
-          end
          
           post.company = @company_parser.parse(item[:text], post.urls)
           #Get technologies from content
