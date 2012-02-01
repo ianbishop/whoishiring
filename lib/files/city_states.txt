@@ -1,274 +1,274 @@
-Los Angeles, California
-Chicago, Illinois
-Houston, Texas
-Philadelphia, Pennsylvania
-Phoenix, Arizona
-San Antonio, Texas
-San Diego, California
-Dallas, Texas
-San Jose, California
-Jacksonville, Florida
-Indianapolis, Indiana
-San Francisco, California
-Austin, Texas
-Columbus, Ohio
-Fort Worth, Texas
-Louisville, Kentucky
-Detroit, Michigan
-El Paso, Texas
-Memphis, Tennessee
-Baltimore, Maryland
-Boston, Massachusetts
-Seattle, Washington
-Nashville , Tennessee
-Denver , Colorado
-Milwaukee, Wisconsin
-Portland, Oregon
-Las Vegas, Nevada
-Oklahoma City, Oklahoma
-Tucson, Arizona
-Fresno, California
-Sacramento, California
-Long Beach, California
-Kansas City, Missouri
-Mesa, Arizona
-Virginia Beach, Virginia
-Atlanta, Georgia
-Colorado Springs, Colorado
-Omaha, Nebraska
-Miami, Florida
-Cleveland, Ohio
-Tulsa, Oklahoma
-Oakland, California
-Minneapolis, Minnesota
-Wichita, Kansas
-Arlington, Texas
-Bakersfield, California
-New Orleans, Louisiana
-Honolulu , Hawaii
-Anaheim, California
-Tampa, Florida
-Aurora, Colorado
-Santa Ana, California
-Saint Louis , Missouri
-Pittsburgh, Pennsylvania
-Corpus Christi, Texas
-Riverside, California
-Cincinnati, Ohio
-Lexington, Kentucky
-Anchorage, Alaska
-Stockton, California
-Toledo, Ohio
-Saint Paul, Minnesota
-Plano, Texas
-Lincoln, Nebraska
-Henderson, Nevada
-Fort Wayne, Indiana
-Saint Petersburg, Florida
-Chula Vista, California
-Norfolk, Virginia
-Orlando, Florida
-Chandler, Arizona
-Laredo, Texas
-Madison, Wisconsin
-Lubbock, Texas
-Baton Rouge, Louisiana
-Garland, Texas
-Glendale, Arizona
-Reno, Nevada
-Hialeah, Florida
-Chesapeake, Virginia
-Scottsdale, Arizona
-North Las Vegas, Nevada
-Irving, Texas
-Fremont, California
-Irvine, California
-Birmingham, Alabama
-San Bernardino, California
-Spokane, Washington
-Gilbert, Arizona
-Arlington , Virginia
-Montgomery, Alabama
-Boise, Idaho
-Richmond, Virginia
-Des Moines, Iowa
-Modesto, California
-Shreveport, Louisiana
-Akron, Ohio
-Tacoma, Washington
-Aurora, Illinois
-Oxnard, California
-Fontana, California
-Augusta , Georgia
-Mobile, Alabama
+Los Angeles, California, CA
+Chicago, Illinois, IL
+Houston, Texas, TX
+Philadelphia, Pennsylvania, PA
+Phoenix, Arizona, AZ
+San Antonio, Texas, TX
+San Diego, California, CA
+Dallas, Texas, TX
+San Jose, California, CA
+Jacksonville, Florida, FL
+Indianapolis, Indiana, IN
+San Francisco, California, CA
+Austin, Texas, TX
+Columbus, Ohio, OH
+Fort Worth, Texas, TX
+Louisville, Kentucky, KY
+Detroit, Michigan, MI
+El Paso, Texas, TX
+Memphis, Tennessee, TN
+Baltimore, Maryland, MD
+Boston, Massachusetts, MA
+Seattle, Washington, WA
+Nashville , Tennessee, TN
+Denver , Colorado, CO
+Milwaukee, Wisconsin, WI
+Portland, Oregon, OR
+Las Vegas, Nevada, NV
+Oklahoma City, Oklahoma, OK
+Tucson, Arizona, AZ
+Fresno, California, CA
+Sacramento, California, CA
+Long Beach, California, CA
+Kansas City, Missouri, MO
+Mesa, Arizona, AZ
+Virginia Beach, Virginia, VA
+Atlanta, Georgia, GA
+Colorado Springs, Colorado, CO
+Omaha, Nebraska, NE
+Miami, Florida, FL
+Cleveland, Ohio, OH
+Tulsa, Oklahoma, OK
+Oakland, California, CA
+Minneapolis, Minnesota, MN
+Wichita, Kansas, KS
+Arlington, Texas, TX
+Bakersfield, California, CA
+New Orleans, Lousiana, LA
+Honolulu , Hawaii, HI
+Anaheim, California, CA
+Tampa, Florida, FL
+Aurora, Colorado, CO
+Santa Ana, California, CA
+Saint Louis , Missouri, MO
+Pittsburgh, Pennsylvania, PA
+Corpus Christi, Texas, TX
+Riverside, California, CA
+Cincinnati, Ohio, OH
+Lexington, Kentucky, KY
+Anchorage, Alaska, AK
+Stockton, California, CA
+Toledo, Ohio, OH
+Saint Paul, Minnesota, MN
+Plano, Texas, TX
+Lincoln, Nebraska, NE
+Henderson, Nevada, NV
+Fort Wayne, Indiana, IN
+Saint Petersburg, Florida, FL
+Chula Vista, California, CA
+Norfolk, Virginia, VA
+Orlando, Florida, FL
+Chandler, Arizona, AZ
+Laredo, Texas, TX
+Madison, Wisconsin, WI
+Lubbock, Texas, TX
+Baton Rouge, Lousiana, LA
+Garland, Texas, TX
+Glendale, Arizona, AZ
+Reno, Nevada, NV
+Hialeah, Florida, FL
+Chesapeake, Virginia, VA
+Scottsdale, Arizona, AZ
+North Las Vegas, Nevada, NV
+Irving, Texas, TX
+Fremont, California, CA
+Irvine, California, CA
+Birmingham, Alabama, AL
+San Bernardino, California, CA
+Spokane, Washington, WA
+Gilbert, Arizona, AZ
+Arlington , Virginia, VA
+Montgomery, Alabama, AL
+Boise, Idaho, ID
+Richmond, Virginia, VA
+Des Moines, Iowa, IA
+Modesto, California, CA
+Shreveport, Lousiana, LA
+Akron, Ohio, OH
+Tacoma, Washington, WA
+Aurora, Illinois, IL
+Oxnard, California, CA
+Fontana, California, CA
+Augusta , Georgia, GA
+Mobile, Alabama, AL
 Little Rock, Arkansas
-Moreno Valley, California
-Glendale, California
-Amarillo, Texas
-Huntington Beach, California
-Columbus, Georgia
-Grand Rapids, Michigan
+Moreno Valley, California, CA
+Glendale, California, CA
+Amarillo, Texas, TX
+Huntington Beach, California, CA
+Columbus, Georgia, GA
+Grand Rapids, Michigan, MI
 Salt Lake City, Utah
-Tallahassee, Florida
-Worcester, Massachusetts
-Newport News, Virginia
-Huntsville, Alabama
-Knoxville, Tennessee
-Santa Clarita, California
-Grand Prairie, Texas
-Brownsville, Texas
+Tallahassee, Florida, FL
+Worcester, Massachusetts, MA
+Newport News, Virginia, VA
+Huntsville, Alabama, AL
+Knoxville, Tennessee, TN
+Santa Clarita, California, CA
+Grand Prairie, Texas, TX
+Brownsville, Texas, TX
 Jackson, Mississippi
-Overland Park, Kansas
-Garden Grove, California
-Santa Rosa, California
-Chattanooga, Tennessee
-Oceanside, California
-Fort Lauderdale, Florida
-Rancho Cucamonga, California
-Port Saint Lucie, Florida
-Ontario, California
-Vancouver, Washington
-Tempe, Arizona
-Springfield, Missouri
-Lancaster, California
-Eugene, Oregon
-Pembroke Pines, Florida
-Salem, Oregon
-Cape Coral, Florida
-Peoria, Arizona
-Springfield, Massachusetts
-Elk Grove, California
-Rockford, Illinois
-Palmdale, California
-Corona, California
-Salinas, California
-Pomona, California
-Pasadena, Texas
-Joliet, Illinois
-Kansas City, Kansas
-Torrance, California
-Bridgeport, Connecticut
-Hayward, California
-Fort Collins, Colorado
-Escondido, California
-Lakewood, Colorado
-Naperville, Illinois
-Dayton, Ohio
-Hollywood, Florida
-Sunnyvale, California
-Alexandria, Virginia
-Mesquite, Texas
-Hampton, Virginia
-Pasadena, California
-Orange, California
-Savannah, Georgia
-Fullerton, California
-Warren, Michigan
-Clarksville, Tennessee
-McKinney, Texas
-McAllen, Texas
-New Haven, Connecticut
-Sterling Heights, Michigan
+Overland Park, Kansas, KS
+Garden Grove, California, CA
+Santa Rosa, California, CA
+Chattanooga, Tennessee, TN
+Oceanside, California, CA
+Fort Lauderdale, Florida, FL
+Rancho Cucamonga, California, CA
+Port Saint Lucie, Florida, FL
+Ontario, California, CA
+Vancouver, Washington, WA
+Tempe, Arizona, AZ
+Springfield, Missouri, MO
+Lancaster, California, CA
+Eugene, Oregon, OR
+Pembroke Pines, Florida, FL
+Salem, Oregon, OR
+Cape Coral, Florida, FL
+Peoria, Arizona, AZ
+Springfield, Massachusetts, MA
+Elk Grove, California, CA
+Rockford, Illinois, IL
+Palmdale, California, CA
+Corona, California, CA
+Salinas, California, CA
+Pomona, California, CA
+Pasadena, Texas, TX
+Joliet, Illinois, IL
+Kansas City, Kansas, KS
+Torrance, California, CA
+Bridgeport, Connecticut, CT
+Hayward, California, CA
+Fort Collins, Colorado, CO
+Escondido, California, CA
+Lakewood, Colorado, CO
+Naperville, Illinois, IL
+Dayton, Ohio, OH
+Hollywood, Florida, FL
+Sunnyvale, California, CA
+Alexandria, Virginia, VA
+Mesquite, Texas, TX
+Hampton, Virginia, VA
+Pasadena, California, CA
+Orange, California, CA
+Savannah, Georgia, GA
+Fullerton, California, CA
+Warren, Michigan, MI
+Clarksville, Tennessee, TN
+McKinney, Texas, TX
+McAllen, Texas, TX
+New Haven, Connecticut, CT
+Sterling Heights, Michigan, MI
 West Valley City, Utah
-Killeen, Texas
-Topeka, Kansas
-Thousand Oaks, California
-Cedar Rapids, Iowa
-Olathe, Kansas
-Waco, Texas
-Hartford, Connecticut
-Visalia, California
-Gainesville, Florida
-Simi Valley, California
-Stamford, Connecticut
-Bellevue, Washington
-Concord, California
-Miramar, Florida
-Coral Springs, Florida
-Lafayette, Louisiana
-Carrollton, Texas
-Roseville, California
-Thornton, Colorado
-Beaumont, Texas
-Allentown, Pennsylvania
-Surprise, Arizona
-Evansville, Indiana
-Abilene, Texas
-Frisco, Texas
-Independence, Missouri
-Santa Clara, California
-Springfield, Illinois
-Vallejo, California
-Victorville, California
-Athens , Georgia
-Peoria, Illinois
-Lansing, Michigan
-Ann Arbor, Michigan
-El Monte, California
-Denton, Texas
-Berkeley, California
+Killeen, Texas, TX
+Topeka, Kansas, KS
+Thousand Oaks, California, CA
+Cedar Rapids, Iowa, IA
+Olathe, Kansas, KS
+Waco, Texas, TX
+Hartford, Connecticut, CT
+Visalia, California, CA
+Gainesville, Florida, FL
+Simi Valley, California, CA
+Stamford, Connecticut, CT
+Bellevue, Washington, WA
+Concord, California, CA
+Miramar, Florida, FL
+Coral Springs, Florida, FL
+Lafayette, Lousiana, LA
+Carrollton, Texas, TX
+Roseville, California, CA
+Thornton, Colorado, CO
+Beaumont, Texas, TX
+Allentown, Pennsylvania, PA
+Surprise, Arizona, AZ
+Evansville, Indiana, IN
+Abilene, Texas, TX
+Frisco, Texas, TX
+Independence, Missouri, MO
+Santa Clara, California, CA
+Springfield, Illinois, IL
+Vallejo, California, CA
+Victorville, California, CA
+Athens , Georgia, GA
+Peoria, Illinois, IL
+Lansing, Michigan, MI
+Ann Arbor, Michigan, MI
+El Monte, California, CA
+Denton, Texas, TX
+Berkeley, California, CA
 Provo, Utah
-Downey, California
-Midland, Texas
-Norman, Oklahoma
-Waterbury, Connecticut
-Costa Mesa, California
-Inglewood, California
-Murfreesboro, Tennessee
-Columbia, Missouri
-Elgin, Illinois
-Clearwater, Florida
-Miami Gardens, Florida
-Rochester, Minnesota
-Pueblo, Colorado
-Lowell, Massachusetts
-Arvada, Colorado
-San Buenaventura (Ventura), California
-Westminster, Colorado
-West Covina, California
-Gresham, Oregon
-Norwalk, California
-Carlsbad, California
-Fairfield, California
-Cambridge, Massachusetts
-Wichita Falls, Texas
-Billings, Montana
-Green Bay, Wisconsin
+Downey, California, CA
+Midland, Texas, TX
+Norman, Oklahoma, OK
+Waterbury, Connecticut, CT
+Costa Mesa, California, CA
+Inglewood, California, CA
+Murfreesboro, Tennessee, TN
+Columbia, Missouri, MO
+Elgin, Illinois, IL
+Clearwater, Florida, FL
+Miami Gardens, Florida, FL
+Rochester, Minnesota, MN
+Pueblo, Colorado, CO
+Lowell, Massachusetts, MA
+Arvada, Colorado, CO
+San Buenaventura (Ventura), California, CA
+Westminster, Colorado, CO
+West Covina, California, CA
+Gresham, Oregon, OR
+Norwalk, California, CA
+Carlsbad, California, CA
+Fairfield, California, CA
+Cambridge, Massachusetts, MA
+Wichita Falls, Texas, TX
+Billings, Montana, MT
+Green Bay, Wisconsin, WI
 West Jordan, Utah
-Richmond, California
-Murrieta, California
-Burbank, California
-Palm Bay, Florida
-Everett, Washington
-Flint, Michigan
-Antioch, California
-Erie, Pennsylvania
-South Bend, Indiana
-Daly City, California
-Centennial, Colorado
-Temecula, California
-New York, New York
-Charlotte, North Carolina
-Albuquerque, New Mexico
-Raleigh, North Carolina
-Newark, New Jersey
-Greensboro, North Carolina
-Buffalo, New York
-Jersey City, New Jersey
-Winston-Salem, North Carolina
-Durham, North Carolina
-Rochester, New York
-Fayetteville, North Carolina
-Yonkers, New York
-Providence, Rhode Island
-Sioux Falls, South Dakota
-Paterson, New Jersey
-Syracuse, New York
-Cary, North Carolina
-Columbia, South Carolina
-Elizabeth, New Jersey
-Charleston, South Carolina
+Richmond, California, CA
+Murrieta, California, CA
+Burbank, California, CA
+Palm Bay, Florida, FL
+Everett, Washington, WA
+Flint, Michigan, MI
+Antioch, California, CA
+Erie, Pennsylvania, PA
+South Bend, Indiana, IN
+Daly City, California, CA
+Centennial, Colorado, CO
+Temecula, California, CA
+New York, New York, NY
+Charlotte, North Carolina, NC
+Albuquerque, New Mexico, NM
+Raleigh, North Carolina, NC
+Newark, New Jersey, NJ
+Greensboro, North Carolina, NC
+Buffalo, New York, NY
+Jersey City, New Jersey, NJ
+Winston-Salem, North Carolina, NC
+Durham, North Carolina, NC
+Rochester, New York, NY
+Fayetteville, North Carolina, NC
+Yonkers, New York, NY
+Providence, Rhode Island, RI
+Sioux Falls, South Dakota, SD
+Paterson, New Jersey, NJ
+Syracuse, New York, NY
+Cary, North Carolina, NC
+Columbia, South Carolina, SC
+Elizabeth, New Jersey, NJ
+Charleston, South Carolina, SC
 Manchester, New Hampshire
-Wilmington, North Carolina
-Fargo, North Dakota
-High Point, North Carolina
+Wilmington, North Carolina, NC
+Fargo, North Dakota, ND
+High Point, North Carolina, NC
