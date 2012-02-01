@@ -50,7 +50,11 @@ class Company
     name_occurences.default = 0
     post.split(" ").each do |word|
       potential_names.each do |potential_name|
-        name_occurences[word] += 1 if word.downcase =~ /^(http:\/\/)?^(www.)?\b#{potential_name}\b/
+        if word.downcase =~ /\b#{potential_name}\b/
+          word = word.chomp if word.end_with? '.'
+          word = word[0..word.length-2] if word.end_with? '\'s'
+          word = word.gsub('STUFF_GOES_HERE','')
+        end
       end
     end
 
@@ -122,6 +126,7 @@ class Company
 
   def backtrack_dict_url(url)
     url = url.strip
+    
     all_words = []
     words = []
     index = 0
@@ -129,25 +134,32 @@ class Company
     10.times do
       if index == url.length
         all_words << words
-        p words
-        k = words.pop.length
+        k = words[-1].length
+        words = words[0..words.length-2]
         prev_length = k-2
         index -= k
       end
-      return [] if index == -1 or prev_length <= 0
+      break if index == -1 or prev_length <= 0
 
       word = @trie.longest_prefix(url[index..index+prev_length])
-      if word.nil?
-        k = words.pop.length
-        prev_length = k-2
-        index -= k
+      if word.nil? or word == ""
+        if words.length == 0
+          words = [url[0..index+1]]
+          index += 1
+        else
+          k = words[-1].length
+          words = words[0..words.length-2]
+          prev_length = k-2
+          index -= k
+        end
       else
         prev_length = url.length-index
         words << word.capitalize
         index += word.length
       end
     end
-    return []
+
+    return all_words
   end
 
   def score_dict_url_candidate(post, all_words)
@@ -155,8 +167,7 @@ class Company
     scores.default = 0
 
     all_words.each do |words|
-      match_data = post.downcase.match(/\b#{words.join(" ")}\b/)
-
+      match_data = post.match(/\b#{words.join(" ")}\b/)
       unless match_data.nil?
         scores[words.join(" ")] =  match_data.length
       end
