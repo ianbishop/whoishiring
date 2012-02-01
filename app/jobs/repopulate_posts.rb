@@ -1,6 +1,6 @@
-require 'searchposts'
+require 'search_posts'
 
-updater = UpdatePosts.new
+updater = SearchPosts.new
 Post.all.each do |post|
   updater.populate_urls(post)
   updater.parse_emails(post)

@@ -1,8 +1,8 @@
 require 'uri'
-require 'trie'
-require 'naiveclassifier'
+require 'utils/trie'
+require 'utils/classifier'
 
-class CompanyParser
+class Company
   
   def initialize(classifier)
     @trie = Trie.new
