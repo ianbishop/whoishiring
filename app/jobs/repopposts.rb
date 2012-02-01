@@ -1,7 +1,11 @@
 require 'searchposts'
 
 updater = UpdatePosts.new
-Post.destroy_all
-updater.get_ids(5).each do |id|
-  updater.get_posts(id)
+Post.all.each do |post|
+  updater.populate_urls(post)
+  updater.parse_emails(post)
+  updater.parse_company(post)
+  updater.parse_technologies(post)
+  updater.parse_cities(post)
+  updater.add_tags(post)
 end
