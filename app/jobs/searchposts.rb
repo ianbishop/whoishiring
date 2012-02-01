@@ -28,13 +28,11 @@ class UpdatePosts
     ids
   end
 
-  def update_posts
-    #Get the newest batch of posts, start with the most recent id
-  end
-
-  def parse_emails(document)
+  def parse_emails(post)
     #Try to get a little more sophisticated with the e-mail parser. Regular and obfuscated emails.
     #Also obfuscate regular e-mails
+    document = post[:content]
+
     emails = []
     #Get rid of html tag issues
     document = document.gsub(/\<p\>/, ' ')
@@ -51,11 +49,52 @@ class UpdatePosts
       email_to_uglify = word if /\w*@\w*\.\w*/.match(word)
       if !email_to_uglify.nil?
         email_to_uglify = email_to_uglify.gsub(/\./, ' [ dot ] ').gsub(/@/, ' [ at ] ') 
-        emails << email_to_uglify
+        post.emails << email_to_uglify
       end
     end
-    
-    emails
+
+    post.save(:validate => false)
+  end
+
+  def populate_urls(post)
+    #Get urls
+    document = post[:content]
+    doc = Nokogiri::HTML(document)
+    doc.css('a').each do |url|
+      safe_url = url[:href].gsub(/<\/?[^>]*>/, "")
+      post.urls << safe_url
+    end
+    post.save(:validate => false)
+  end
+
+  def add_tags(post)
+    document = post[:content]
+    post.intern = (document.include? "intern")
+    post.remote = (document.include? "remote")
+    post.honeb = (document.include? "h1b")
+    post.save(:validate => false)
+  end
+
+  def parse_company(post)
+    document = post[:content]
+    post.company = @company_parser.parse(document, post.urls)
+    post.save(:validate => false)
+  end
+
+  def parse_technologies(post)
+    document = post[:content]
+    #Get technologies from content
+    techs = File.open('lib/files/languages.txt').readlines.map! do |e| e=e.chop end
+    techs.each do |tech|
+      if document.include? tech.downcase
+        post.technologies << tech
+      end
+    end
+  end
+
+  def parse_cities(post)
+    document = post[:content]
+    post.location = @cityparser.parse_cities(document)
   end
 
   def get_posts(id)
@@ -74,31 +113,7 @@ class UpdatePosts
           post = Post.new
           post.content = item[:text]
           post.author = item[:username]
-          post.intern = (document.include? "intern")
-          post.remote = (document.include? "remote")
-          post.honeb = (document.include? "h1b")
-          post.location = @cityparser.parse_cities(document)
 
-          post.emails = parse_emails(document) 
-          
-          #Get urls
-          doc = Nokogiri::HTML(item[:text])
-          doc.css('a').each do |url|
-            safe_url = url[:href].gsub(/<\/?[^>]*>/, "")
-            post.urls << safe_url
-          end
-         
-          post.company = @company_parser.parse(item[:text], post.urls)
-          #Get technologies from content
-          techs = File.open('lib/files/languages.txt').readlines.map! do |e| e=e.chop end
-          techs.each do |tech|
-            if document.include? tech.downcase
-              post.technologies << tech
-            end
-          end
-
-          # company name, this gonna be dirty.
-          
 
           post.create_ts = item[:create_ts]
           post.save(:validate => false)
@@ -108,5 +123,4 @@ class UpdatePosts
       end
     end
   end
-
 end

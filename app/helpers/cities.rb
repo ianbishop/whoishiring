@@ -17,10 +17,20 @@ class Cities
 
   def parse_cities(document)
     city = "Unknown"
-    docset = Set.new(document.split(" "))
     @cities_states.each do |key, value|
-      if docset.include?(key.downcase)
-        city = key + " " + value 
+      #Can we find full city, full state?
+      full_pattern = /#{key.strip + ", " + value.strip}/
+      if full_pattern.match(document) 
+        city = key + " " + value
+        break
+      end
+
+      #How about city, abbrev?
+      unless @states_abbrev[value].nil?
+        abbrev_pattern = /#{key.strip + ", " + @states_abbrev[value]}/
+        if abbrev_pattern.match(document)
+          city = key + " " + value
+        end
       end
     end
 
