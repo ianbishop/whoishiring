@@ -15,11 +15,19 @@ class Cities
     end
   end
 
+  def get_full_matchers 
+    expressions = []
+    @cities_states.each do |key, value|
+      full_pattern = /#{key.strip + ", " + value.strip}/
+      expressions << full_pattern 
+    end
+    expressions
+  end
+
   def parse_cities(document)
     city = "Unknown"
     @cities_states.each do |key, value|
       #Can we find full city, full state?
-      full_pattern = /#{key.strip + ", " + value.strip}/
       if full_pattern.match(document) 
         city = key + " " + value
         break
