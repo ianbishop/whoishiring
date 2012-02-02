@@ -29,6 +29,13 @@ class SearchPosts
     ids
   end
 
+  def parse_cities(post)
+    #Here we'll try and pull cities from a post
+    document = post[:content]
+    post.location = @cityparser.match_document(document)
+    post.save(:validate => false)
+  end
+
   def parse_emails(post)
     #Try to get a little more sophisticated with the e-mail parser. Regular and obfuscated emails.
     #Also obfuscate regular e-mails
@@ -101,11 +108,6 @@ class SearchPosts
         post.technologies << tech
       end
     end
-  end
-
-  def parse_cities(post)
-    document = post[:content]
-    post.location = @cityparser.parse_cities(document)
   end
 
   def get_posts(id)
