@@ -9,13 +9,12 @@
     <th>Position</th>
     <th>Company</th>
     <th>Technologies</th>
-    <th>Author</th>
     <th>Location</th>
-    <th></th>
+    <th>Date Added</th>
   </tr>
 
 <% @posts.each do |post| %>
-  <tr>
+  <tr onclick="location.href='<%= post_path(post) %>'">
     <td>
       <% if post.intern %>
         <span class="label success">Intern</span>
@@ -30,9 +29,9 @@
     <td><%= post.position %></td>
     <td><%= post.company %></td>
     <td><%= post.technologies.join(", ") %></td>
-    <td><%= link_to post.author, "http://news.ycombinator.com/user?id=#{post.author}" %></td>
     <td><%= post.location %></td>
-    <td><%= link_to 'Show', post %></td>
+    <%# ugh i know, i don't want to talk about it  %>
+    <td><%= post.created.strftime("%B %e, %Y") %></td>
   </tr>
 <% end %>
 </table>

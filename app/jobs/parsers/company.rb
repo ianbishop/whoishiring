@@ -87,6 +87,12 @@ class Company
           potential_names << domain_and_tld[0]
           potential_names << domain_and_tld.join("") # matches canvas
           potential_names << domain_and_tld.join(".") # matches visua.ly
+          
+          # stuff like lattice-engines
+          if domain_and_tld[0].include? "-"
+            potential_names << domain_and_tld[0].gsub("-", "")
+          end
+
         end
       end
     end

@@ -7,7 +7,7 @@ class Post
   key :content, String
   key :location, String
   key :position, String
-  key :create_ts, String
+  key :created, Time
   key :intern, Boolean
   key :remote, Boolean
   key :honeb, Boolean

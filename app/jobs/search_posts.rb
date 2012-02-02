@@ -2,6 +2,7 @@ require 'utils/classifier'
 require 'uri'
 require 'parsers/company'
 require 'parsers/city'
+require 'date'
 
 class SearchPosts
   def initialize
@@ -48,7 +49,8 @@ class SearchPosts
     document.split(' ').each do |word|
       email_to_uglify = word if /\w*@\w*\.\w*/.match(word)
       if !email_to_uglify.nil?
-        email_to_uglify = email_to_uglify.gsub(/\./, ' [ dot ] ').gsub(/@/, ' [ at ] ') 
+        # moving this to a helper so that i can parse urls from the emails!
+        #email_to_uglify = email_to_uglify.gsub(/\./, ' [ dot ] ').gsub(/@/, ' [ at ] ') 
         post.emails << email_to_uglify
       end
     end
@@ -65,6 +67,13 @@ class SearchPosts
       safe_url = url[:href].gsub(/<\/?[^>]*>/, "")
       post.urls << safe_url
     end
+    
+    # grab urls from email on the off chance they didn't post a url
+    post.emails.each do |email|
+      host = email.split("@")[1]
+      post.urls << ("http://www." + host) unless host.nil?
+    end
+
     post.save(:validate => false)
   end
 
@@ -84,7 +93,7 @@ class SearchPosts
 
   def parse_technologies(post)
     post.technologies = []
-    document = post[:content]
+    document = post[:content].downcase
     #Get technologies from content
     techs = File.open('lib/files/languages.txt').readlines.map! do |e| e=e.chop end
     techs.each do |tech|
@@ -110,14 +119,16 @@ class SearchPosts
       if @classifier.classify(document) == 'hiring'
         user_post = Post.where({:author => item[:username]}).first
         
-        if user_post.nil? or item[:create_ts] > user_post.create_ts
+        #2012-01-01T15:00:54Z
+        created = Date.strptime(item[:create_ts], "%Y-%m-%d").to_time
+
+        if user_post.nil? or created > user_post.created
                 
           post = Post.new
           post.content = item[:text]
           post.author = item[:username]
-
-
-          post.create_ts = item[:create_ts]
+          post.created = created
+          
           post.save(:validate => false)
 
           user_post.destroy unless user_post.nil?

@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.sort(:author).page(params[:page]).per(20)
+    @posts = Post.sort(:created.desc).page(params[:page]).per(20)
 
     respond_to do |format|
       format.html # index.html.erb
