@@ -35,6 +35,23 @@ class PostTest < ActiveSupport::TestCase
     assert(one_match, "Didn't match a full pattern city, state combination")
   end
 
+  test "Match an example city with a full name" do
+    city = @city_parser.match_document("Hey we're a shop out of San Francisco, California. Check us out!")  
+    assert_equal("San Francisco, CA", city, "doesn't match against a full city-state string")
+  end
+
+  test "Match an example city with an abbreviated state name" do
+    city = @city_parser.match_document("Hey everyone we're from New York, NY and we'd love to work with you")
+    assert_equal("New York, NY", city, "doesn't match against an abbreviated city_state string")
+  end
+
+  test "Match against some real content from the db" do
+    document = "Santa Monica, CA | Riot Games<p>Riot Games makes League of Legends, one of the most popular games in the world.  Come work on the problems that occur when providing new game content worldwide at massive scale every 2 weeks.<p>We mainly write code in Java, C++, Ruby, PHP, Flex, and Erlang.  You can see the full list of open positions at: <a href=\"http://www.riotgames.com/careers/job-openings-0\" >http://www.riotgames.com/careers/job-openings-0</a><p>You can contact me through the email in my profile if you have any questions."
+    city = @city_parser.match_document(document)
+    assert_equal("Santa Monica, CA", city, "not matching against database content") 
+  end
+  
+
   test "partial pattern regular expressions should be well formed" do
     patterns = @city_parser.get_abbrev_matchers
     one_match = false

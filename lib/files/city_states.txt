@@ -49,6 +49,7 @@ Honolulu , Hawaii, HI
 Anaheim, California, CA
 Tampa, Florida, FL
 Aurora, Colorado, CO
+Santa Monica, California, CA
 Santa Ana, California, CA
 Saint Louis , Missouri, MO
 Pittsburgh, Pennsylvania, PA
