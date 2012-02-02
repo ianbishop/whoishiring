@@ -93,12 +93,23 @@ class SearchPosts
 
   def parse_technologies(post)
     post.technologies = []
-    document = post[:content].downcase
+    document = post[:content]
+    
+    #remove URLs out of the picture
+    post.urls.each do |url|
+      document = document.gsub(url, "")
+    end
+
+    document = document.downcase
+
     #Get technologies from content
-    techs = File.open('lib/files/languages.txt').readlines.map! do |e| e=e.chop end
+    techs = File.open('lib/files/languages.txt').readlines.map! do |e| e=e.chop.split(", ") end
+    
     techs.each do |tech|
-      if document.include? tech.downcase
-        post.technologies << tech
+      tech.each do |moniker|
+        if document.include? moniker.downcase
+          post.technologies << tech.first unless post.technologies.include? tech.first
+        end
       end
     end
   end

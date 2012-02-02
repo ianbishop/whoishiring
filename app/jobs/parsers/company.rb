@@ -20,11 +20,7 @@ class Company
   def parse(post, urls)
     post = post.gsub(/<\/?[^>]*>/, " ") # fixes situations like </p>CompanyName
 
-    if urls.empty?
-      # try ngrams based techniques
-      ngrams_candidate = best_ngrams_match(post)
-      return ngrams_candidate unless ngrams_candidate.nil?
-    else
+    unless urls.empty?
       # remove URLs out of the picture
       urls.each do |url|
         post = post.gsub(url, "")
@@ -37,7 +33,28 @@ class Company
       return dict_url_candidate unless dict_url_candidate.nil?
     end
 
+    #proper_noun_candidate = best_proper_noun(post)
+    #return proper_noun_candidate unless proper_noun_candidate.nil?
+
     'unknown'
+  end
+
+  # last attempt at a shoddy heuristic
+  def best_proper_noun(post)
+    proper_noun_occurences = {}
+    proper_noun_occurences.default = 0
+
+    post.split(" ").each do |word|
+      if word =~ /\b[AZ].*\b/ and !@trie.has_key?(word) and !@trie.has_key?(word.downcase)
+        proper_noun_occurences[word] += 1 
+      end
+    end
+
+    if proper_noun_occurences.empty?
+      nil
+    else
+      proper_noun_occurences.max[0]
+    end
   end
 
   # Attempts to find full url matches in the string.
@@ -50,7 +67,11 @@ class Company
     name_occurences.default = 0
     post.split(" ").each do |word|
       potential_names.each do |potential_name|
-        name_occurences[word.gsub(/[,\)\(:]/,"")] += 1 if word.downcase =~ /^(http:\/\/)?^(www.)?\b#{potential_name}\b/
+        if word.downcase =~ /^(http:\/\/)?^(www.)?\b#{potential_name}\b/
+          safe_word = word.gsub(/[,\)\(:]/, "").strip
+          safe_word = safe_word[0..safe_word.length-3] if safe_word.end_with? "'s"
+          name_occurences[safe_word] += 1
+        end
       end
     end
 
