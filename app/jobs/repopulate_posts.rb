@@ -8,4 +8,5 @@ Post.all.each do |post|
   updater.parse_technologies(post)
   updater.parse_cities(post)
   updater.add_tags(post)
+  updater.parse_cities(post)
 end
