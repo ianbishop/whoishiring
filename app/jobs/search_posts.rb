@@ -2,6 +2,7 @@ require 'utils/classifier'
 require 'uri'
 require 'parsers/company'
 require 'parsers/city'
+require 'parsers/positions'
 require 'date'
 
 class SearchPosts
@@ -12,6 +13,7 @@ class SearchPosts
     @classifier.train("not hiring", "lib/files/whoisnothiring.txt")
     @company_parser = Company.new(@classifier)
     @cityparser = City.new
+    @positionparser = Positions.new
   end
 
   def get_ids(limit)
@@ -27,6 +29,12 @@ class SearchPosts
       ids << id
     end
     ids
+  end
+
+  def parse_positions(post)
+   document = post[:content]
+   post.positions = @positionparser.match(document)
+   post.save(:validate => false) 
   end
 
   def parse_cities(post)

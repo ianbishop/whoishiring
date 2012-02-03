@@ -2,6 +2,7 @@ require 'test_helper'
 require 'parsers/company'
 require 'utils/classifier'
 require 'parsers/city'
+require 'parsers/positions'
 
 class PostTest < ActiveSupport::TestCase
 
@@ -10,10 +11,22 @@ class PostTest < ActiveSupport::TestCase
     classifier.train("hiring", "lib/files/whoishiring.txt")
     @company_parser = Company.new(classifier)
     @city_parser = City.new
+    @position_parser = Positions.new
   end
 
   def teardown
     @company_parser = nil
+  end
+
+  test "front end engineers match" do
+    match_string = "We're looking for front end engineers to build a better web"
+    assert_equal(@position_parser.match(match_string), ["Front End Engineer"], "Didn't match front end engineer successfully")
+  end
+
+  test "all cases match" do
+    match_string = "we want front end engineers, designers, and back-end engineers to help us whateva whateva"
+    assert_equal(@position_parser.match(match_string),
+                 ["Front End Engineer", "Back End Engineer", "Designer"])
   end
 
   test "all city regular expressions should be non-nil" do

@@ -9,4 +9,5 @@ Post.all.each do |post|
   updater.parse_cities(post)
   updater.add_tags(post)
   updater.parse_cities(post)
+  updater.parse_positions(post)
 end
