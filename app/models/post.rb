@@ -6,7 +6,7 @@ class Post
   key :author, String
   key :content, String
   key :location, String
-  key :position, String
+  key :positions, Array 
   key :create_ts, String
   key :intern, Boolean
   key :remote, Boolean
