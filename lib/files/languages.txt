@@ -1,39 +1,60 @@
-ActionScript
 Flash
 Linux
-C#
-asp.net
-vb.net
-linq
-wcf
+C#, C Sharp
+ASP.NET, ASP
+Struts
+Stripes
+VB.NET, Visual Basic
+Linq
+WCF, Windows Communication Foundation
 C++
 Clojure
 CoffeeScript
 Erlang
-F#
+F#, F Sharp
 Groovy
 Haskell
 Java
-android
-hibernate
-spring
-play
-JavaScript
-jquery
-dojo
-css
-html
-html5
-node.js
-ruby on rails
+Android
+Hibernate
+Spring
+Javascript
+jQuery
+dojo, dijit
+CSS
+HTML
+node.js, node
+Ruby On Rails, RoR, Rails
 Lua
-Objective-C
+Objective-C, Objective C
 Perl
 PHP
 Scala
 Ruby
-mongo db  
-mongodb
+Mongo DB, mongoDB, Mongo
 Python
-django
+Django
 iOS
+SASS
+PostgreSQL
+MySQL
+Oracle
+Redis
+memcache, memcached
+varnish
+Flex
+Blackberry
+Mobile
+Kindle
+WP7, Windows Phone
+Twisted
+Actionscript
+Photoshop
+Grails
+nginx
+CakePHP, Cake PHP
+AWS, Amazon Web Services, EC2, S3, VPC
+Cassandra
+oAuth
+Backbone
+Hadoop
