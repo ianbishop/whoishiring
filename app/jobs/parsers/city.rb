@@ -64,7 +64,7 @@ class City
   end
 
   def parse_cities(document)
-    city = "Unknown"
+    city = ""
     full_patterns = self.get_full_matchers 
     partial_patterns = self.get_abbrev_matchers
 
