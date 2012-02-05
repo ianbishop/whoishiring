@@ -93,7 +93,7 @@ class SearchPosts
   end
 
   def add_tags(post)
-    document = post[:content]
+    document = post[:content].downcase
     post.intern = (document.include? "intern")
     post.remote = (document.include? "remote")
     post.honeb = (document.include? "h1b")
