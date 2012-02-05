@@ -10,6 +10,5 @@
  *
  *= require_self
  *= require_tree .
- *= require bootstrap.min
- *= require gmaps4rails
+ *= require twitter/bootstrap
 */

@@ -24,7 +24,8 @@ gem 'jquery-rails'
 gem 'mongo_mapper'
 gem 'bson_ext'
 
-gem 'gmaps4rails'
+gem 'less-rails-bootstrap'
+
 gem 'kaminari'
 #Gems used for scheduled hacker news searches
 gem 'rufus-scheduler'
