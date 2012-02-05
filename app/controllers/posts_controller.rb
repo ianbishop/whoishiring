@@ -31,6 +31,10 @@ class PostsController < ApplicationController
       @posts = @posts.where(:technologies => {:$regex => /#{params[:technology]}/i})
     end
 
+    unless params[:location].nil?
+      @posts = @posts.where(:location => {:$regex => /#{params[:location]}/i})
+    end
+
     @posts = @posts.page(params[:page]).per(20)
 
     respond_to do |format|
