@@ -1,34 +1,35 @@
 class Post
   include MongoMapper::Document
-  include Gmaps4rails::ActsAsGmappable
 
   key :company, String
   key :author, String
   key :content, String
   key :location, String
   key :positions, Array 
-  key :create_ts, String
+  key :created, Time
   key :intern, Boolean
   key :remote, Boolean
   key :honeb, Boolean
-  key :latitude, Float
-  key :longitude, Float
-  key :address, String
-  key :gmaps, Boolean
   key :emails, Array
   key :urls, Array
   key :technologies, Array
   timestamps!
 
-  acts_as_gmappable :lat => 'latitude', :lon => 'longitude', :process_geocoding => true,
-                    :check_process => :prevent_geocoding,
-                    :address => 'address', :normalized_address => 'address'
-
-  def prevent_geocoding
-    address.blank? || (!lat.blank? && !lon.blank?)
+  def pretty_created
+    self.created.strftime("%B %e, %Y")
   end
 
-  def gmaps4rails_address
-      self.location
+  def pretty_positions
+    self.positions.join("/")
+  end
+
+  def pretty_technologies
+    self.technologies.join("/")
+  end
+
+  def pretty_emails
+    return self.emails.map do |email|
+      email = email.gsub(/\./, ' [ dot ] ').gsub(/@/, ' [ at ] ')
+    end
   end
 end

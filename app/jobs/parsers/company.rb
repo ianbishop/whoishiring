@@ -36,7 +36,7 @@ class Company
     #proper_noun_candidate = best_proper_noun(post)
     #return proper_noun_candidate unless proper_noun_candidate.nil?
 
-    'unknown'
+    nil
   end
 
   # last attempt at a shoddy heuristic

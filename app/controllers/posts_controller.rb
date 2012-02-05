@@ -14,8 +14,6 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post = Post.where(:id => params[:id]).first
-    @prev_page = params[:page]
-    @json = @post.to_gmaps4rails
 
     respond_to do |format|
       format.html # show.html.erb

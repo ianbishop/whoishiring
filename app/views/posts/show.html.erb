@@ -1,6 +1,8 @@
+<div class="row">
+  <div class="span-12">
 <ul class="breadcrumb">
   <li><%= link_to "Jobs", posts_path %><span class="divider">/</span></li>
-  <li class="active"><%= "#{@post.position} at #{@post.company}" %></li>
+  <li class="active"><%= "#{@post.pretty_positions} at #{@post.company}" %></li>
 </ul>
 
 <% if !notice.blank? %>
@@ -10,25 +12,30 @@
 </div>
 <% end %>
 
-<h1><%= @post.position %> at <%= @post.company %></h1>
+<h1>
+    <% if @post.positions.length > 0 and !@post.company.nil?%>
+      <%= @post.pretty_positions %> at <%= @post.company %>
+    <% elsif @post.positions.length > 0 %>
+      <%= @post.pretty_positions %>
+    <% elsif !@post.company.nil? %>
+      <%= @post.company %>
+    <% end %>
+</h1>
 
-<div class="row">
-  <div class="span11"> 
-    
 <p>
 <% if @post.intern %>
-  <span class="label success">Intern</span>
+  <span class="label label-success">Intern</span>
 <% end %>
 <% if @post.remote %> 
-  <span class="label important">Remote</span>
+  <span class="label label-important">Remote</span>
 <% end %>
 <% if @post.honeb %>
-  <span class="label notice">H1B</span>
+  <span class="label label-info">H1B</span>
 <% end %>
 </p>
     <p>
-      <b>Position:</b>
-      <%= @post.position %>
+      <b>Positions:</b>
+      <%= @post.pretty_positions %>
     </p>
     <p>
       <b>Company:</b>
@@ -36,8 +43,8 @@
     </p>
     <p>
       <b>Technologies:</b>
-      <%= @post.technologies.join(', ') %>
-    </p>
+      <%= @post.pretty_technologies %>
+     </p>
     <p>
       <b>Location:</b>
       <%= @post.location %>
@@ -54,7 +61,7 @@
     <p>
       <b>Contact(s):</b>
       <ul>
-      <% @post.emails.each do |email| %>
+      <% @post.pretty_emails.each do |email| %>
         <li><%= email %></li>
       <% end %> 
       </ul>  
@@ -68,8 +75,6 @@
       </ul>
     </p>
   </div>
-  <div class="span5">
-    <%= gmaps4rails(@json) 
-  %>
-  </div>
+</div>
+</div>
 </div>
