@@ -7,17 +7,30 @@ class PostsController < ApplicationController
     logger.info params
     params.each do |parameter|
       logger.info parameter
+      if parameter == nil
+        continue
+      end
       if parameter == ['honeb', 'true']
         filters[:honeb] = true
       elsif parameter == ['remote', 'true']
         filters[:remote] = true
       elsif parameter == ['intern', 'true']
         filters[:intern] = true
+      elsif parameter[0] == 'company'
+        filters[:company] = {:$regex => /#{parameter[1]}/i}
       end 
     end
 
     @posts = Post.where(filters).sort(:created.desc)
-    
+
+    unless params[:position].nil?
+      @posts = @posts.where(:positions => {:$regex => /#{params[:position]}/i})
+    end
+
+    unless params[:technology].nil?
+      @posts = @posts.where(:technologies => {:$regex => /#{params[:technology]}/i})
+    end
+
     @posts = @posts.page(params[:page]).per(20)
 
     respond_to do |format|
