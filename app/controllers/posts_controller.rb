@@ -27,8 +27,8 @@ class PostsController < ApplicationController
       @posts = @posts.where(:positions => {:$regex => /#{params[:position]}/i})
     end
 
-    unless params[:technology].nil?
-      @posts = @posts.where(:technologies => {:$regex => /#{params[:technology]}/i})
+    unless params[:technologies].nil?
+      @posts = @posts.where(:technologies => {:$regex => /#{params[:technologies]}/i})
     end
 
     unless params[:location].nil?
