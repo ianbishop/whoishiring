@@ -32,4 +32,16 @@ class Post
       email = email.gsub(/\./, ' [ dot ] ').gsub(/@/, ' [ at ] ')
     end
   end
+
+  def pretty_position_company
+    position_company = ""
+    if self.positions.length > 0 and !self.company.nil?
+      position_company = "#{self.pretty_positions} at #{self.company}"
+    elsif self.positions.length > 0
+      position_company = self.pretty_positions.to_s
+    elsif !self.company.nil?
+      position_company = self.company.to_s
+    end
+    return position_company
+  end
 end

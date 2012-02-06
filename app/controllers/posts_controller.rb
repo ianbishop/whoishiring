@@ -4,9 +4,7 @@ class PostsController < ApplicationController
   def index
     #Process searches and filters
     filters = {}
-    logger.info params
     params.each do |parameter|
-      logger.info parameter
       if parameter == nil
         continue
       end
