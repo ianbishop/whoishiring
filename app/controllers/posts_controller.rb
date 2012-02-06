@@ -4,12 +4,7 @@ class PostsController < ApplicationController
   def index
     #Process searches and filters
     filters = {}
-<<<<<<< HEAD
-=======
-    logger.info params
-    
     #Filter posts by tag and company
->>>>>>> angusiguess/master
     params.each do |parameter|
       if parameter == nil
         continue
@@ -28,15 +23,28 @@ class PostsController < ApplicationController
     @posts = Post.where(filters).sort(:created.desc)
 
     #Filter posts by position, technology, location
-    unless params[:position].nil?
-      @posts = @posts.where(:positions => {:$regex => /#{params[:position]}/i})
+    unless params[:positions].nil? or params[:positions].empty?
+      searches = {}
+      or_criteria = []
+      params[:positions].split(',').each do |searchstr|
+        or_criteria << {:positions => {:$regex => /\b#{searchstr.strip}\b/i}}
+      end
+      searches[:$or] = or_criteria
+      @posts = @posts.where(searches)
     end
 
-    unless params[:technology].nil?
-      @posts = @posts.where(:technologies => {:$regex => /#{params[:technology]}/i})
+    unless params[:technologies].nil? or params[:technologies].empty?
+      searches = {}
+      or_criteria = []
+      params[:technologies].split(',').each do |searchstr|
+        or_criteria << {:technologies => {:$regex => /\b#{searchstr.strip}\b/i}}
+      end
+      searches[:$or] = or_criteria
+      #@posts = @posts.where(:technologies => {:$regex => /#{params[:technologies]}/i})
+    @posts = @posts.where(searches)
     end
 
-    unless params[:location].nil?
+    unless params[:location].nil? or params[:location].empty?
       @posts = @posts.where(:location => {:$regex => /#{params[:location]}/i})
     end
 

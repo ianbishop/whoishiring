@@ -17,7 +17,7 @@
       <label class="checkbox inline">
         <input type="checkbox" name="honeb" value="true" <%= params[:honeb] == 'true' ? 'CHECKED' : '' %>> H1B
       </label>
-      <input type="text" name="position" class="span3 input-small" placeholder="Positions (comma-delimited)" value="<%= params[:position] %>">
+      <input type="text" name="positions" class="span3 input-small" placeholder="Positions (comma-delimited)" value="<%= params[:positions] %>">
       <input type="text" name="company" class="span2 input-small" placeholder="Company" value="<%= params[:company] %>">
       <input type="text" name="technologies" class="span3 input-small" placeholder="Technologies (comma-delimited)" value="<%= params[:technologies] %>">
       <input type="text" name="location" class="span2 input-small" placeholder="Location" data-provide="typeahead" value="<%= params[:location] %>">
