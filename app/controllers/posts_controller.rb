@@ -35,7 +35,7 @@ class PostsController < ApplicationController
       end
       searches[:$or] = or_criteria
       #@posts = @posts.where(:technologies => {:$regex => /#{params[:technologies]}/i})
-    @posts = @posts.where(searches)
+      @posts = @posts.where(:technologies => {:$regex => /#{params[:technologies]}/i})
     end
 
     unless params[:location].nil?
