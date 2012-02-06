@@ -28,7 +28,14 @@ class PostsController < ApplicationController
     end
 
     unless params[:technologies].nil?
-      @posts = @posts.where(:technologies => {:$regex => /#{params[:technologies]}/i})
+      searches = {}
+      or_criteria = []
+      params[:technologies].split(',').each do |searchstr|
+        or_criteria << {:technologies => {:$regex => /\b#{searchstr.strip}\b/i}}
+      end
+      searches[:$or] = or_criteria
+      #@posts = @posts.where(:technologies => {:$regex => /#{params[:technologies]}/i})
+    @posts = @posts.where(searches)
     end
 
     unless params[:location].nil?
