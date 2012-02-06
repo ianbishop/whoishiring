@@ -5,6 +5,8 @@ class PostsController < ApplicationController
     #Process searches and filters
     filters = {}
     logger.info params
+    
+    #Filter posts by tag and company
     params.each do |parameter|
       logger.info parameter
       if parameter == nil
@@ -23,6 +25,7 @@ class PostsController < ApplicationController
 
     @posts = Post.where(filters).sort(:created.desc)
 
+    #Filter posts by position, technology, location
     unless params[:position].nil?
       @posts = @posts.where(:positions => {:$regex => /#{params[:position]}/i})
     end
