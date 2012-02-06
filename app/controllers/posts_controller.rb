@@ -4,7 +4,12 @@ class PostsController < ApplicationController
   def index
     #Process searches and filters
     filters = {}
+<<<<<<< HEAD
+=======
+    logger.info params
+    
     #Filter posts by tag and company
+>>>>>>> angusiguess/master
     params.each do |parameter|
       if parameter == nil
         continue
@@ -27,15 +32,8 @@ class PostsController < ApplicationController
       @posts = @posts.where(:positions => {:$regex => /#{params[:position]}/i})
     end
 
-    unless params[:technologies].nil?
-      searches = {}
-      or_criteria = []
-      params[:technologies].split(',').each do |searchstr|
-        or_criteria << {:technologies => {:$regex => /\b#{searchstr.strip}\b/i}}
-      end
-      searches[:$or] = or_criteria
-      #@posts = @posts.where(:technologies => {:$regex => /#{params[:technologies]}/i})
-      @posts = @posts.where(:technologies => {:$regex => /#{params[:technologies]}/i})
+    unless params[:technology].nil?
+      @posts = @posts.where(:technologies => {:$regex => /#{params[:technology]}/i})
     end
 
     unless params[:location].nil?
